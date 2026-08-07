@@ -28,8 +28,7 @@ export default function Home() {
         <div className="hero-copy">
           <h1>Ukrainian startups in <em>Silicon Valley.</em></h1>
           <p>
-            A curated list of Ukrainian-founded commercial, defense, and dual-use companies
-            with a connection to the Bay Area.
+            A focused list of recent Y Combinator startups built by Ukrainian founders.
           </p>
           <div className="hero-actions">
             <a className="primary-button" href="#directory">View the directory</a>

@@ -1,6 +1,6 @@
 # Spilni
 
-A curated directory of Ukrainian-founded commercial, defense, and dual-use startups connected to Silicon Valley.
+A focused directory of recent Y Combinator startups built by Ukrainian founders.
 
 ## Design rationale
 
@@ -10,8 +10,7 @@ Research that informed the interface:
 
 - [W3C: Designing for Web Accessibility](https://www.w3.org/WAI/tips/designing/) — contrast, identifiable controls, consistent navigation, and responsive layouts.
 - [W3C: Understanding minimum contrast](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html) — 4.5:1 contrast for normal-sized text.
-- [Baymard: Show applied filters in an overview](https://baymard.com/blog/how-to-design-applied-filters) — persistent filter state and easy clearing.
-- [SRI: Ukrainian defense startups in Silicon Valley](https://www.sri.com/press/story/meet-the-startups-reinventing-the-defense-innovation-playbook/) — validation for the DTSA cohort entries and their Valley connection.
+- [Baymard: Search UX](https://baymard.com/blog/site-search-suggestions) — clear, lightweight directory search.
 
 ## Development
 
@@ -20,4 +19,4 @@ npm install
 npm run build
 ```
 
-Startup records live in `lib/startups.ts`. Each entry includes a public source for its Ukrainian roots or Silicon Valley connection.
+Startup records live in `lib/startups.ts`. Each entry includes its official Y Combinator profile and a local logo asset.
