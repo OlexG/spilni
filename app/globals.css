@@ -239,6 +239,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .card-details div { display: grid; grid-template-columns: 105px 1fr; gap: 10px; padding: 9px 0; border-top: 1px solid #e6e4dd; font-size: 11px; line-height: 1.35; }
 .card-details dt { color: #777f87; font-weight: 700; }
 .card-details dd { margin: 0; font-weight: 800; }
+.signal-link { color: var(--blue); text-decoration: underline; text-decoration-color: rgba(0, 87, 184, 0.28); text-underline-offset: 3px; }
+.signal-link:hover { text-decoration-color: currentColor; }
+.hiring-now { color: #17643d; }
 .founder-links { display: flex; flex-wrap: wrap; gap: 5px 12px; }
 .founder-links a { color: var(--blue); text-decoration: underline; text-decoration-color: rgba(0, 87, 184, 0.28); text-underline-offset: 3px; }
 .founder-links a:hover { text-decoration-color: currentColor; }
@@ -282,9 +285,14 @@ footer > div { display: flex; gap: 18px; color: var(--muted); }
 .profile-facts div { min-height: 98px; padding: 20px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--surface); }
 .profile-facts dt { margin-bottom: 8px; color: var(--muted); font-size: 10px; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; }
 .profile-facts dd { margin: 0; font-size: 14px; font-weight: 800; line-height: 1.4; }
+.profile-facts dd a { color: var(--blue); text-decoration: underline; text-decoration-color: rgba(0, 87, 184, 0.25); text-underline-offset: 3px; }
 .profile-section, .text-page section { margin-top: 64px; }
 .profile-section h2, .text-page h2 { margin: 0 0 14px; font-size: 29px; font-weight: 900; letter-spacing: -0.035em; }
 .profile-section > p, .text-page section p { max-width: 760px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.7; }
+.signal-sections { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.signal-sections > div { padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
+.signal-sections p { margin: 0 0 14px; color: var(--muted); font-size: 15px; line-height: 1.6; }
+.signal-sections a { color: var(--blue); font-size: 12px; font-weight: 900; text-decoration: underline; text-underline-offset: 3px; }
 .text-page section a, .review-note a { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
 .founder-profiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .founder-profiles article { padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
@@ -327,6 +335,7 @@ footer > div { display: flex; gap: 18px; color: var(--muted); }
   .profile-logo { width: 92px; height: 92px; border-radius: 19px; }
   .profile-hero h1, .text-page h1 { font-size: 47px; }
   .profile-facts { grid-template-columns: repeat(2, 1fr); }
+  .signal-sections { grid-template-columns: 1fr; }
   .founder-profiles { grid-template-columns: 1fr; }
 }
 

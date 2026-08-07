@@ -17,12 +17,12 @@ const jsonLd = {
   "@type": "Dataset",
   "@id": "https://spilni.com/data#dataset",
   name: "Hot Startups with Ukrainian Founders",
-  description: "A curated dataset of hot startups, their Ukrainian founders, momentum, locations, and supporting sources.",
+  description: "A curated dataset of hot startups, their Ukrainian founders, funding stages, hiring signals, locations, and supporting sources.",
   url: "https://spilni.com/data",
   dateModified: DIRECTORY_REVIEWED_AT,
   creator: { "@id": "https://spilni.com/#organization" },
   isBasedOn: sourceUrls,
-  variableMeasured: ["company", "founder", "momentum", "accelerator", "location", "sector", "Ukraine connection", "source"],
+  variableMeasured: ["company", "founder", "funding stage", "hiring signal", "momentum", "accelerator", "location", "sector", "Ukraine connection", "source"],
   distribution: {
     "@type": "DataDownload",
     encodingFormat: "application/json",
@@ -42,7 +42,7 @@ export default function DataPage() {
         <a className="data-download" href="/data/startups.json">Download startups.json <span>↗</span></a>
         <section>
           <h2>What is included</h2>
-          <p>{startups.length} company records with stable URLs, founder names and LinkedIn profiles, momentum signals, optional accelerator tags, locations, Ukrainian connection notes, and claim-level source links.</p>
+          <p>{startups.length} company records with stable URLs, founder LinkedIn profiles, sourced funding stages, current hiring signals, optional accelerator tags, locations, Ukrainian connection notes, and claim-level source links.</p>
         </section>
         <section>
           <h2>Review status</h2>

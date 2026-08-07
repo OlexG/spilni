@@ -21,6 +21,18 @@ export type StartupAccelerator = {
   profile: string;
 };
 
+export type StartupStage = {
+  label: string;
+  detail: string;
+  source: string;
+};
+
+export type StartupHiring = {
+  status: "Hiring" | "No public openings" | "Unclear";
+  detail: string;
+  url: string;
+};
+
 export type Startup = {
   slug: string;
   name: string;
@@ -33,6 +45,8 @@ export type Startup = {
   focus: string;
   sectors: string[];
   tags: string[];
+  stage: StartupStage;
+  hiring: StartupHiring;
   momentum: string;
   description: string;
   answer: string;
@@ -57,6 +71,8 @@ export const startups: Startup[] = [
     focus: "Edtech · Language learning",
     sectors: ["Education", "Marketplace", "Artificial intelligence"],
     tags: ["Unicorn", "$150M Series D", "Global"],
+    stage: { label: "Series D", detail: "$150M Series D at a $1.2B valuation, announced in January 2026.", source: "https://www.prnewswire.com/news-releases/preply-raises-150-million-to-shape-the-future-of-education-through-human-led-ai-enhanced-learning-302665890.html" },
+    hiring: { status: "Hiring", detail: "Current roles across Kyiv, Barcelona, London, and New York.", url: "https://www.linkedin.com/company/preply/jobs" },
     momentum: "$150M Series D at a $1.2B valuation in January 2026; EBITDA-positive with learners and tutors across 180 countries.",
     description: "A global marketplace for live, AI-enhanced language learning with human tutors.",
     answer: "Preply is a Ukrainian-founded language-learning marketplace that became a unicorn in January 2026 after raising a $150 million Series D led by WestCap at a $1.2 billion valuation.",
@@ -84,6 +100,8 @@ export const startups: Startup[] = [
     focus: "Defense · Autonomous systems",
     sectors: ["Defense", "Autonomy", "Drones", "Robotics"],
     tags: ["Defense", "$1B valuation", "UK–Ukraine"],
+    stage: { label: "Stage undisclosed", detail: "$50M venture round at an approximately $1B valuation; no conventional round label was disclosed.", source: "https://www.bloomberg.com/news/articles/2026-03-05/ukraine-battlefield-tech-firm-uforce-nears-1-billion-valuation" },
+    hiring: { status: "No public openings", detail: "No roles were posted on the company’s public LinkedIn jobs page when checked.", url: "https://www.linkedin.com/company/uforce-global/jobs" },
     momentum: "$50M raised at an approximately $1B valuation in March 2026, with systems used across more than 150,000 combat missions.",
     description: "Combat-proven autonomous systems spanning sea, air, land, and counter-UAS missions.",
     answer: "UFORCE is a Ukrainian-founded, London-headquartered defense company that raised $50 million at an approximately $1 billion valuation in 2026 to scale combat-proven autonomous systems for Ukraine and allied militaries.",
@@ -111,6 +129,8 @@ export const startups: Startup[] = [
     focus: "AI · Business communications",
     sectors: ["Artificial intelligence", "SaaS", "Telecommunications"],
     tags: ["YC S18", "$105M financing", "AI"],
+    stage: { label: "Growth financing", detail: "$96M customer-value financing plus $9M in equity, announced in September 2025.", source: "https://www.prnewswire.com/news-releases/openphone-becomes-quo-new-name-updated-products-and-105-million-in-growth-financing-mark-major-inflection-point-for-ai-driven-front-office-solution-302562915.html" },
+    hiring: { status: "Hiring", detail: "The official careers page is accepting applications for open roles.", url: "https://www.quo.com/careers" },
     momentum: "$105M in growth financing in September 2025 alongside the OpenPhone-to-Quo rebrand and expansion of its Sona AI agent.",
     description: "An AI-powered business phone and front-office platform for small and growing companies.",
     answer: "Quo, formerly OpenPhone, is a San Francisco communications platform co-founded by Ukrainian-Canadian entrepreneur Daryna Kulya. It announced $105 million in growth financing in September 2025.",
@@ -139,6 +159,8 @@ export const startups: Startup[] = [
     focus: "Defense · Drone swarms",
     sectors: ["Defense", "Autonomy", "Artificial intelligence", "Drones"],
     tags: ["Defense", "$15M Series A", "US-backed"],
+    stage: { label: "Public · post-Series A", detail: "$15M Series A followed by a 2026 U.S. public-market listing.", source: "https://www.sec.gov/Archives/edgar/data/2092574/000110465926072392/tmb-20260331xs1.htm" },
+    hiring: { status: "Hiring", detail: "Multiple current roles across Kyiv, Lviv, Warsaw, and remote.", url: "https://jobs.dou.ua/companies/swarmer/vacancies/" },
     momentum: "$15M U.S.-led Series A in September 2025; software has supported more than 100,000 battlefield missions.",
     description: "Collaborative autonomy software that coordinates large groups of unmanned systems.",
     answer: "Swarmer is a Ukrainian-born defense technology company whose drone-swarm software has supported more than 100,000 combat missions. It raised a $15 million U.S.-led Series A in 2025.",
@@ -166,6 +188,8 @@ export const startups: Startup[] = [
     focus: "Media · AI entertainment",
     sectors: ["Media", "Artificial intelligence", "Consumer", "Entertainment"],
     tags: ["$22M Series A", "Fox partner", "85M users"],
+    stage: { label: "Series A", detail: "$22M Series A led by Horizon Capital, announced in January 2026.", source: "https://www.holywater.tech/blog/holywater-raises-record-22-million-to-turn-microdramas-into-mainstream-entertainment-in-the-u-s" },
+    hiring: { status: "Hiring", detail: "Current roles across product, engineering, content, finance, and growth.", url: "https://jobs.dou.ua/companies/holy-water/vacancies/" },
     momentum: "$22M Series A in January 2026 after doubling 2025 revenue, reaching 85M users, and signing a 200-series agreement with Fox Entertainment.",
     description: "A mobile-first entertainment platform for vertical series, books, and AI-generated streaming.",
     answer: "HOLYWATER is a Kyiv-founded entertainment technology company that raised a $22 million Series A in 2026 after doubling revenue and expanding its U.S. microdrama partnerships.",
@@ -193,6 +217,8 @@ export const startups: Startup[] = [
     focus: "Defense · Geospatial intelligence",
     sectors: ["Defense", "Geospatial", "Drones", "Artificial intelligence"],
     tags: ["Defense", "€7.2M seed", "Estonia–Ukraine"],
+    stage: { label: "Seed", detail: "€7.2M seed round led by Final Frontier and joined by Axon and SmartCap.", source: "https://finalfrontier.vc/newsroom/11022026" },
+    hiring: { status: "Hiring", detail: "The company maintains an active public vacancies portal.", url: "https://farsightvision.hurma.work/public-vacancies?lang=en" },
     momentum: "€7.2M seed in February 2026 led by Axon and Estonia’s SmartCap Defence Fund after adding 1,500 accounts in 2025.",
     description: "Geospatial intelligence software for drone teams operating in GPS-denied environments.",
     answer: "Farsight Vision is a Ukrainian-Estonian defense startup whose mapping and navigation software is used by more than 100 Ukrainian units. It raised a €7.2 million seed round in 2026.",
@@ -219,6 +245,8 @@ export const startups: Startup[] = [
     focus: "Fintech · Car finance",
     sectors: ["Fintech", "Consumer finance", "Automotive"],
     tags: ["£300M facility", "UK fintech", "Fast growth"],
+    stage: { label: "Series A", detail: "Latest named equity stage is Series A; later capital includes large asset-backed debt facilities.", source: "https://www.carmoola.co.uk/blog/carmoola-series-a" },
+    hiring: { status: "Hiring", detail: "Recent public hiring signals include customer operations and growth roles in London.", url: "https://www.linkedin.com/company/carmoola/jobs" },
     momentum: "£300M asset-backed debt facility in June 2025, tripling lending capacity as customer numbers doubled year over year.",
     description: "A mobile-first direct lender that simplifies and accelerates UK car financing.",
     answer: "Carmoola is a half-British, half-Ukrainian car-finance platform that secured a £300 million asset-backed debt facility in 2025 to scale across the UK.",
@@ -247,6 +275,8 @@ export const startups: Startup[] = [
     focus: "AI · Critical minerals",
     sectors: ["Artificial intelligence", "Mining", "Climate", "Industrial technology"],
     tags: ["YC S19", "$20M Series B", "Critical minerals"],
+    stage: { label: "Series B", detail: "$20M Series B for AI-driven mineral exploration, announced in January 2025.", source: "https://www.prnewswire.com/news-releases/earth-ai-closes-oversubscribed-round-raising-20m-for-ai-driven-mineral-exploration-302360289.html" },
+    hiring: { status: "Hiring", detail: "Current signals include AI engineering, geochemistry, and field roles in Australia.", url: "https://au.seek.com/Earth-AI-jobs/in-All-Sydney-NSW" },
     momentum: "$20M Series B in January 2025 followed by multiple discoveries of critical-mineral deposits in Australia.",
     description: "AI-driven mineral exploration and low-disturbance drilling for critical metal deposits.",
     answer: "EARTH AI is an Australian-U.S. critical-minerals company founded by Ukrainian geologist Roman Teslyuk. It raised a $20 million Series B and announced multiple mineral discoveries in 2025.",
@@ -273,6 +303,8 @@ export const startups: Startup[] = [
     focus: "Security · Developer infrastructure",
     sectors: ["Cybersecurity", "Developer tools", "Open source", "Enterprise software"],
     tags: ["YC W23", "$16M Series A", "Open source"],
+    stage: { label: "Series A", detail: "$16M Series A led by Elad Gil, announced in June 2025.", source: "https://www.prnewswire.com/news-releases/infisical-secures-16m-series-a-to-redefine-enterprise-secrets-identity-and-access-management-302475063.html" },
+    hiring: { status: "Hiring", detail: "The official careers page lists current opportunities.", url: "https://infisical.com/careers" },
     momentum: "$16M Series A in June 2025 after reaching cash-flow positivity and adoption across major enterprise workloads.",
     description: "Open-source security infrastructure for secrets, certificates, and privileged access.",
     answer: "Infisical is a San Francisco security-infrastructure company co-founded by Ukrainian entrepreneur Vlad Matsiiako. It raised a $16 million Series A in 2025 after becoming cash-flow positive.",
@@ -302,6 +334,8 @@ export const startups: Startup[] = [
     focus: "Defense · Autonomous targeting",
     sectors: ["Defense", "Autonomy", "Computer vision", "Drones"],
     tags: ["Defense", "NATO-codified", "Axon-backed"],
+    stage: { label: "Strategic round", detail: "Axon-backed strategic investment; amount and conventional venture stage were not disclosed.", source: "https://thefourthlaw.ai/" },
+    hiring: { status: "Hiring", detail: "The company lists dozens of current technical and operational roles.", url: "https://jobs.dou.ua/companies/thefourthlaw-ai/vacancies/" },
     momentum: "Strategic Axon investment in 2026; NATO-codified autonomy modules deployed across more than 70 Ukrainian combat units.",
     description: "Autonomy modules and terminal guidance for drones operating through jamming and signal loss.",
     answer: "The Fourth Law is a Ukrainian defense startup building NATO-codified autonomous guidance systems used by more than 70 Ukrainian combat units and backed by U.S. public-safety company Axon.",
@@ -328,6 +362,8 @@ export const startups: Startup[] = [
     focus: "Defense · Robotic systems",
     sectors: ["Defense", "Robotics", "Drones", "Manufacturing"],
     tags: ["Defense", "NATO-codified", "German production"],
+    stage: { label: "Seed", detail: "$800K seed round followed by a strategic investment from Quantum Systems.", source: "https://quantum-systems.com/us/news/quantum-systems-and-frontline-strategic-investment/" },
+    hiring: { status: "Hiring", detail: "The official company career page lists current roles.", url: "https://www.frontline-robotics.tech/career" },
     momentum: "Quantum Systems investment followed by a German government-backed production joint venture targeting more than 10,000 systems annually.",
     description: "Battlefield-proven robotic and unmanned systems co-produced in Ukraine and Germany.",
     answer: "Frontline Robotics is a Ukrainian defense company whose NATO-codified systems are used by more than 60 units. It formed a German production venture with Quantum Systems in 2026.",
@@ -354,6 +390,8 @@ export const startups: Startup[] = [
     focus: "Quantum computing · Infrastructure",
     sectors: ["Quantum computing", "Developer tools", "Deep tech"],
     tags: ["$11M seed", "Deep tech", "US–Ukraine"],
+    stage: { label: "Seed", detail: "$11M seed round led by Primary Venture Partners, announced in January 2026.", source: "https://0e190a550a8c4c8c4b93-fcd009c875a5577fd4fe2f5b7e3bf4eb.ssl.cf2.rackcdn.com/EINPresswire-882655745-haiqu-raises-11-million-in-seed-round-to-enable-near-term-quantum-use-cases-with-new-operating-system-1.pdf" },
+    hiring: { status: "Hiring", detail: "Recent public roles include product marketing for its quantum software platform.", url: "https://www.linkedin.com/company/haiquai/jobs" },
     momentum: "$11M seed in January 2026 led by Primary Venture Partners, with backing from Toyota Ventures and other Western investors.",
     description: "A hardware-aware operating system that makes quantum experiments repeatable and practical.",
     answer: "Haiqu is a U.S.-Ukrainian quantum software company with a team in Lviv. It raised an $11 million seed round in 2026 to bring its quantum operating system to market.",
@@ -380,6 +418,8 @@ export const startups: Startup[] = [
     focus: "Defense · Counter-UAS",
     sectors: ["Defense", "Counter-UAS", "Robotics", "Artificial intelligence"],
     tags: ["YC Spring 2026", "Defense", "$1.6M sales"],
+    stage: { label: "Pre-seed · YC", detail: "Early institutional stage following Y Combinator’s Spring 2026 batch.", source: "https://www.ycombinator.com/companies/9-mothers-corporation" },
+    hiring: { status: "Hiring", detail: "Current Austin roles span perception, robotics, hardware, and embedded systems.", url: "https://9mothers.com/careers" },
     momentum: "$1.6M in reported sales and delivery work for the U.S. Department of War before completing YC’s Spring 2026 batch.",
     description: "Counter-drone systems and AI mission software built for modern defense operations.",
     answer: "9 Mothers is an Austin counter-drone startup with $1.6 million in reported sales and U.S. defense delivery experience. Co-founder Roman Khomenko has documented roots in Ukraine.",
@@ -406,6 +446,8 @@ export const startups: Startup[] = [
     focus: "AI · Technical support",
     sectors: ["Artificial intelligence", "Customer support", "Industrial technology"],
     tags: ["YC Fall 2025", "AI", "Bloomberg Beta"],
+    stage: { label: "Pre-seed · YC", detail: "Early-stage backing from YC, Bloomberg Beta, Burst Capital, and operators from major AI companies; amount undisclosed.", source: "https://useprox.com/" },
+    hiring: { status: "Hiring", detail: "Current roles include engineering, go-to-market, operations, and creative production.", url: "https://www.ycombinator.com/companies/prox/jobs" },
     momentum: "Fresh 2026 backing from Bloomberg Beta, Burst VC, Weights & Biases, and operators from OpenAI and Microsoft.",
     description: "Multimodal AI support for companies that make complex physical products.",
     answer: "Prox is a Ukrainian-founded AI support company backed in 2026 by Bloomberg Beta, Burst VC, Weights & Biases, and operators from OpenAI and Microsoft.",
@@ -434,6 +476,8 @@ export const startups: Startup[] = [
     focus: "AI · Sales",
     sectors: ["Artificial intelligence", "Sales technology", "B2B software"],
     tags: ["YC S23", "AI sales", "Lviv team"],
+    stage: { label: "Seed", detail: "$3M seed round in September 2023; a later 2026 financing signal has no confirmed public stage.", source: "https://jobs.dou.ua/companies/aisdr-inc/" },
+    hiring: { status: "No public openings", detail: "The latest public vacancy found was inactive when checked.", url: "https://jobs.dou.ua/companies/aisdr-inc/" },
     momentum: "Reported $2M in 2024 revenue and a new financing event in April 2026 while continuing to build from Lviv and San Francisco.",
     description: "AI sales agents that handle prospecting, follow-ups, and meeting booking.",
     answer: "AiSDR is an AI sales company founded by Ukrainian brothers Yuriy and Oleg Zaremba. It reported $2 million in 2024 revenue and a new financing event in 2026.",
@@ -462,6 +506,8 @@ export const startups: Startup[] = [
     focus: "AI · Developer tools",
     sectors: ["Artificial intelligence", "Developer tools", "Collaboration software"],
     tags: ["YC Winter 2026", "AI", "Developer tools"],
+    stage: { label: "Seed", detail: "$3.5M raised from YC, Moonfire Ventures, and technology operators and angels.", source: "https://www.ycombinator.com/companies/sparkles/jobs" },
+    hiring: { status: "Hiring", detail: "Hiring a founding product engineer in San Francisco.", url: "https://www.ycombinator.com/companies/sparkles/jobs" },
     momentum: "Selected for Y Combinator’s Winter 2026 batch and launched an AI workspace for safely proposing changes to existing codebases.",
     description: "An AI workspace that helps teams safely make changes to existing codebases.",
     answer: "Sparkles is a San Francisco developer-tools startup founded by Ukrainian entrepreneur Daniil Bekirov. The company joined Y Combinator’s Winter 2026 batch with an AI workspace for reviewed codebase changes.",

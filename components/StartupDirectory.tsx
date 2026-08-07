@@ -31,7 +31,7 @@ export default function StartupDirectory() {
 
     return startups.filter((startup) => {
       const founderNames = startup.founders.map((founder) => founder.name).join(" ");
-      const haystack = `${startup.name} ${startup.focus} ${startup.location} ${startup.tags.join(" ")} ${startup.momentum} ${startup.description} ${founderNames}`.toLowerCase();
+      const haystack = `${startup.name} ${startup.focus} ${startup.location} ${startup.tags.join(" ")} ${startup.stage.label} ${startup.hiring.status} ${startup.momentum} ${startup.description} ${founderNames}`.toLowerCase();
       return haystack.includes(normalized);
     });
   }, [query]);
@@ -79,6 +79,8 @@ export default function StartupDirectory() {
               <dl className="card-details">
                 <div><dt>Focus</dt><dd>{startup.focus}</dd></div>
                 <div><dt>Based</dt><dd>{startup.location}</dd></div>
+                <div><dt>Stage</dt><dd><a className="signal-link" href={startup.stage.source} target="_blank" rel="noreferrer">{startup.stage.label} ↗</a></dd></div>
+                <div><dt>Hiring</dt><dd><a className={startup.hiring.status === "Hiring" ? "signal-link hiring-now" : "signal-link"} href={startup.hiring.url} target="_blank" rel="noreferrer">{startup.hiring.status} ↗</a></dd></div>
                 <div>
                   <dt>Founders</dt>
                   <dd className="founder-links">

@@ -19,7 +19,7 @@ npm install
 npm run build
 ```
 
-Startup records live in `lib/startups.ts`. Each entry includes momentum and Ukrainian-connection evidence, founders, citations, optional accelerator details, and a local logo asset.
+Startup records live in `lib/startups.ts`. Each entry includes momentum, a sourced funding stage, a current hiring signal, Ukrainian-connection evidence, founders, citations, optional accelerator details, and a local logo asset.
 
 ## Discovery endpoints
 

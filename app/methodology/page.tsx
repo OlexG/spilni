@@ -45,6 +45,10 @@ export default function MethodologyPage() {
           <p>We prefer official company and investor announcements, founder profiles, accelerator records, government documents, and direct interviews. Independent reporting can establish Ukrainian roots or validate momentum when a primary source is unavailable. Each company page states which facts each citation supports.</p>
         </section>
         <section>
+          <h2>Funding stage and hiring</h2>
+          <p>Stage reflects the latest publicly named equity round. Debt facilities and strategic investments are labeled separately rather than forced into a Series A, B, or C category. “Hiring” requires a public careers page or recent vacancy; “No public openings” means none were visible when checked, not that the company has stopped recruiting privately.</p>
+        </section>
+        <section>
           <h2>Freshness and corrections</h2>
           <p>The current directory was reviewed on August 7, 2026. Company status, locations, names, and roles can change. To suggest a company or correct a record, <a href="https://github.com/OlexG/spilni/issues/new?title=Directory%20correction">open a public GitHub issue</a>.</p>
         </section>

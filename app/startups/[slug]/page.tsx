@@ -111,6 +111,8 @@ export default async function StartupPage({ params }: StartupPageProps) {
 
         <dl className="profile-facts">
           {startup.accelerator ? <div><dt>Accelerator</dt><dd>YC {startup.accelerator.batch}</dd></div> : null}
+          <div><dt>Stage</dt><dd><a href={startup.stage.source}>{startup.stage.label} ↗</a></dd></div>
+          <div><dt>Hiring</dt><dd><a href={startup.hiring.url}>{startup.hiring.status} ↗</a></dd></div>
           <div><dt>Founded</dt><dd>{startup.foundedYear}</dd></div>
           <div><dt>Location</dt><dd>{startup.location}</dd></div>
           <div><dt>Focus</dt><dd>{startup.focus}</dd></div>
@@ -121,6 +123,19 @@ export default async function StartupPage({ params }: StartupPageProps) {
         <section className="profile-section">
           <h2>Why it’s hot</h2>
           <p>{startup.momentum}</p>
+        </section>
+
+        <section className="profile-section signal-sections">
+          <div>
+            <h2>Funding stage</h2>
+            <p>{startup.stage.detail}</p>
+            <a href={startup.stage.source}>Verify stage ↗</a>
+          </div>
+          <div>
+            <h2>Hiring signal</h2>
+            <p>{startup.hiring.detail}</p>
+            <a href={startup.hiring.url}>View jobs signal ↗</a>
+          </div>
         </section>
 
         <section className="profile-section">
