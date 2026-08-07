@@ -24,7 +24,7 @@ export default function Home() {
         <nav aria-label="Main navigation">
           <a href="#directory">Directory</a>
           <a href="#about">About</a>
-          <a className="nav-cta" href="mailto:hello@spilni.org?subject=Suggest%20a%20startup">Suggest a startup</a>
+          <a className="nav-cta" href="https://github.com/OlexG/spilni/issues/new?title=Suggest%20a%20startup">Suggest a startup</a>
         </nav>
       </header>
 
@@ -39,7 +39,7 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <a className="primary-button" href="#directory">Explore the directory <span>↓</span></a>
-            <a className="text-link" href="mailto:hello@spilni.org?subject=Suggest%20a%20startup">Add a company <span>↗</span></a>
+            <a className="text-link" href="https://github.com/OlexG/spilni/issues/new?title=Suggest%20a%20startup">Add a company <span>↗</span></a>
           </div>
         </div>
         <div className="hero-panel" aria-label="Directory summary">
@@ -88,7 +88,7 @@ export default function Home() {
           <span>Know a team we missed?</span>
           <h2>Help this map grow.</h2>
         </div>
-        <a href="mailto:hello@spilni.org?subject=Suggest%20a%20startup">Suggest a startup <span>↗</span></a>
+        <a href="https://github.com/OlexG/spilni/issues/new?title=Suggest%20a%20startup">Suggest a startup <span>↗</span></a>
       </section>
 
       <footer>
