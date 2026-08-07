@@ -451,6 +451,43 @@ export const startups: Startup[] = [
     ],
     lastReviewed: DIRECTORY_REVIEWED_AT,
   },
+  {
+    slug: "sparkles",
+    name: "Sparkles",
+    alternateNames: ["Ai Daniil Bekirov"],
+    logo: "/logos/sparkles.png",
+    foundedYear: 2025,
+    status: "Active",
+    location: "San Francisco",
+    focus: "AI · Developer tools",
+    sectors: ["Artificial intelligence", "Developer tools", "Collaboration software"],
+    tags: ["YC Winter 2026", "AI", "Developer tools"],
+    momentum: "Selected for Y Combinator’s Winter 2026 batch and launched an AI workspace for safely proposing changes to existing codebases.",
+    description: "An AI workspace that helps teams safely make changes to existing codebases.",
+    answer: "Sparkles is a San Francisco developer-tools startup founded by Ukrainian entrepreneur Daniil Bekirov. The company joined Y Combinator’s Winter 2026 batch with an AI workspace for reviewed codebase changes.",
+    website: "https://sparkles.dev/",
+    accelerator: { name: "Y Combinator", batch: "Winter 2026", profile: "https://www.ycombinator.com/companies/sparkles" },
+    connectionLabel: "Ukrainian-founded",
+    inclusionReason: "Founder Daniil Bekirov self-identifies with Ukraine in his official Y Combinator founder biography.",
+    founders: [
+      {
+        name: "Daniil Bekirov",
+        alternateNames: ["Ai Daniil Bekirov"],
+        role: "Founder",
+        linkedin: "https://www.linkedin.com/in/aidaniilbekirov",
+        connectionSummary: "Self-identifies with Ukraine in his official Y Combinator founder biography.",
+      },
+    ],
+    sources: [
+      {
+        label: "Sparkles company and founder profile",
+        publisher: "Y Combinator",
+        url: "https://www.ycombinator.com/companies/sparkles",
+        supports: ["company", "batch", "founded year", "location", "product", "founder", "Ukraine connection"],
+      },
+    ],
+    lastReviewed: DIRECTORY_REVIEWED_AT,
+  },
 ];
 
 export function getStartup(slug: string) {

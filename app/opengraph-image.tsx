@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Spilni — hot Ukrainian startups and founders";
+export const alt = "Spilni — hot startups with Ukrainian founders";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -15,8 +15,8 @@ export default function OpenGraphImage() {
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
         <div style={{ display: "flex", flexDirection: "column", fontSize: 78, lineHeight: 0.98, letterSpacing: "-4px", fontWeight: 900 }}>
-          <div>Ukrainian startups</div>
-          <div style={{ color: "#0057b8" }}>going global.</div>
+          <div>Hot startups with</div>
+          <div style={{ color: "#0057b8" }}>Ukrainian founders.</div>
         </div>
         <div style={{ width: 360, height: 12, borderRadius: 4, background: "#ffd700" }} />
         <div style={{ fontSize: 27, color: "#5d6670" }}>Verified founders, momentum, Western ties, and sources.</div>
