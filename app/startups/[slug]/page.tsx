@@ -18,8 +18,11 @@ export async function generateMetadata({ params }: StartupPageProps): Promise<Me
   const startup = getStartup((await params).slug);
   if (!startup) return {};
 
-  const title = `${startup.name}: Ukrainian YC Startup & Founders`;
-  const description = `${startup.answer} See its Ukrainian connection, founders, LinkedIn profiles, and verified sources.`;
+  const connectionTitle = startup.connectionLabel === "Ukrainian-founded"
+    ? "Ukrainian-Founded YC Startup"
+    : "Ukraine-Connected YC Startup";
+  const title = `${startup.name}: ${connectionTitle}`;
+  const description = `${startup.description} ${startup.name} is ${startup.connectionLabel.toLowerCase()} and joined YC’s ${startup.batch} batch.`;
   const url = `/startups/${startup.slug}`;
 
   return {
@@ -42,7 +45,7 @@ export default async function StartupPage({ params }: StartupPageProps) {
         "@type": "WebPage",
         "@id": `${pageUrl}#webpage`,
         url: pageUrl,
-        name: `${startup.name}: Ukrainian YC Startup & Founders`,
+        name: `${startup.name}: ${startup.connectionLabel === "Ukrainian-founded" ? "Ukrainian-Founded" : "Ukraine-Connected"} YC Startup`,
         description: startup.answer,
         dateModified: startup.lastReviewed,
         lastReviewed: startup.lastReviewed,
@@ -121,7 +124,11 @@ export default async function StartupPage({ params }: StartupPageProps) {
         </section>
 
         <section className="profile-section">
-          <h2>Ukrainian {startup.founders.length === 1 ? "founder" : "founders"}</h2>
+          <h2>
+            {startup.connectionLabel === "Ukrainian-founded"
+              ? `Ukrainian ${startup.founders.length === 1 ? "founder" : "founders"}`
+              : `${startup.founders.length === 1 ? "Founder" : "Founders"} with a Ukraine connection`}
+          </h2>
           <div className="founder-profiles">
             {startup.founders.map((founder) => (
               <article key={founder.name}>

@@ -95,7 +95,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .primary-button:hover { background: var(--blue-dark); box-shadow: 0 10px 24px rgba(0, 87, 184, 0.28); transform: translateY(-1px); }
 .directory-status { margin-top: 18px !important; color: #747b83 !important; font-size: 11px !important; font-weight: 700 !important; }
 .directory-status a { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
-.hero-art { position: relative; width: clamp(150px, 16vw, 210px); flex: 0 0 auto; }
+.hero-art { position: relative; width: clamp(168px, 19vw, 250px); flex: 0 0 auto; }
 .hero-art::before {
   content: "";
   position: absolute;
@@ -126,6 +126,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
   animation: plane-sway 13.3s linear infinite;
 }
 
+/* The far plane traces a small circle on its own period, so the two darts
+   never move in lockstep. */
+.plane-far {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: plane-far 15.5s linear infinite;
+}
+
 /* One dash period (13 + 15), so the trail streams without a visible jump. */
 .plane-trail { animation: plane-trail 2.4s linear infinite; }
 
@@ -134,8 +142,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
   transform-origin: center;
   animation: plane-twinkle 4.3s linear infinite;
 }
-.plane-twinkle:nth-child(2) { animation-delay: -1.7s; }
-.plane-twinkle:nth-child(3) { animation-delay: -3.1s; }
 
 @keyframes plane-drift {
   0%, 100% { transform: translateX(0); }
@@ -168,6 +174,17 @@ button, a { -webkit-tap-highlight-color: transparent; }
   62.5% { transform: rotate(0.2deg); }
   75% { transform: rotate(-0.6deg); }
   87.5% { transform: rotate(0.2deg); }
+}
+
+@keyframes plane-far {
+  0%, 100% { transform: translate(0, 3px) rotate(0deg); }
+  12.5% { transform: translate(3.5px, 2.1px) rotate(0.6deg); }
+  25% { transform: translate(5px, 0) rotate(0.9deg); }
+  37.5% { transform: translate(3.5px, -2.1px) rotate(0.6deg); }
+  50% { transform: translate(0, -3px) rotate(0deg); }
+  62.5% { transform: translate(-3.5px, -2.1px) rotate(-0.6deg); }
+  75% { transform: translate(-5px, 0) rotate(-0.9deg); }
+  87.5% { transform: translate(-3.5px, 2.1px) rotate(-0.6deg); }
 }
 
 @keyframes plane-trail {
@@ -293,7 +310,7 @@ footer > div { display: flex; gap: 18px; color: var(--muted); }
   .hero-inner { display: block; }
   .hero h1 { font-size: clamp(43px, 13vw, 62px); }
   .hero-copy > p { font-size: 16px; }
-  .hero-art { width: 125px; margin: 32px 0 -20px auto; }
+  .hero-art { width: 148px; margin: 32px 0 -20px auto; }
   .directory { padding: 80px 18px 90px; }
   .search-field { min-width: 0; }
   .startup-grid { grid-template-columns: 1fr; }

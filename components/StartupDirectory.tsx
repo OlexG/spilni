@@ -75,7 +75,7 @@ export default function StartupDirectory() {
                 <div><dt>Focus</dt><dd>{startup.focus}</dd></div>
                 <div><dt>Based</dt><dd>{startup.location}</dd></div>
                 <div>
-                  <dt>Ukrainian founders</dt>
+                  <dt>{startup.connectionLabel === "Ukrainian-founded" ? "Ukrainian founders" : "Ukraine connection"}</dt>
                   <dd className="founder-links">
                     {startup.founders.map((founder) => (
                       <a key={founder.name} href={founder.linkedin} target="_blank" rel="noreferrer">

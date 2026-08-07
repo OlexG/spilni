@@ -8,7 +8,7 @@ import { DIRECTORY_REVIEWED_AT, startups } from "@/lib/startups";
 
 export const metadata: Metadata = {
   title: "Ukrainian Y Combinator Startups & Founders",
-  description: "Explore Ukrainian-founded Y Combinator startups, their founders, YC batches, locations, products, LinkedIn profiles, and verified sources.",
+  description: "Explore Ukrainian-founded and Ukraine-connected Y Combinator startups, founders, batches, locations, LinkedIn profiles, and verified sources.",
   alternates: {
     canonical: "/",
     types: {
@@ -41,7 +41,7 @@ const homeJsonLd = {
       url: "https://spilni.com/",
       name: "Spilni",
       alternateName: ["Спільні", "spilni.com"],
-      description: "A sourced directory of Ukrainian-founded Y Combinator startups and founders.",
+      description: "A sourced directory of Ukrainian-founded and Ukraine-connected Y Combinator startups and founders.",
       inLanguage: "en",
       publisher: { "@id": "https://spilni.com/#organization" },
     },

@@ -12,17 +12,6 @@ export const metadata: Metadata = {
   creator: "Spilni",
   publisher: "Spilni",
   category: "technology",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
   openGraph: {
     siteName: "Spilni",
     locale: "en_US",

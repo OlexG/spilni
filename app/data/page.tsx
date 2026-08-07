@@ -6,7 +6,7 @@ import { DIRECTORY_REVIEWED_AT, startups } from "@/lib/startups";
 
 export const metadata: Metadata = {
   title: "Open Startup Directory Data",
-  description: "Machine-readable JSON data for Spilni’s sourced directory of Ukrainian Y Combinator startups and founders.",
+  description: "Machine-readable JSON data for Spilni’s sourced directory of Ukrainian-founded and Ukraine-connected YC startups.",
   alternates: { canonical: "/data", types: { "application/json": "/data/startups.json" } },
   openGraph: { url: "/data", title: "Open Startup Directory Data | Spilni", type: "website" },
 };

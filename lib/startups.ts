@@ -59,7 +59,7 @@ export const startups: Startup[] = [
       {
         name: "Roman Khomenko",
         role: "Co-founder",
-        linkedin: "https://www.linkedin.com/in/dowakin/",
+        linkedin: "https://www.linkedin.com/in/dowakin",
         connectionSummary: "Studied in Kharkiv, worked in Ukraine, and lists Ukrainian as a native language.",
       },
     ],
@@ -101,7 +101,7 @@ export const startups: Startup[] = [
         name: "Daniil Bekirov",
         alternateNames: ["Ai Daniil Bekirov"],
         role: "Founder",
-        linkedin: "https://www.linkedin.com/in/aidaniilbekirov/",
+        linkedin: "https://www.linkedin.com/in/aidaniilbekirov",
         connectionSummary: "Self-identifies with Ukraine in his official YC founder biography.",
       },
     ],
@@ -136,7 +136,7 @@ export const startups: Startup[] = [
         name: "Dima Yanovsky",
         alternateNames: ["Dmytro Yanovskyi"],
         role: "Co-founder",
-        linkedin: "https://www.linkedin.com/in/yanovsk/",
+        linkedin: "https://www.linkedin.com/in/yanovsk",
         connectionSummary: "Identified as Ukrainian in an AIN founder interview.",
       },
       {
