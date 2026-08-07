@@ -1,5 +1,4 @@
 import StartupDirectory from "@/components/StartupDirectory";
-import { startups } from "@/lib/startups";
 
 function Mark() {
   return (
@@ -11,8 +10,6 @@ function Mark() {
 }
 
 export default function Home() {
-  const defenseCount = startups.filter((startup) => startup.type !== "Commercial").length;
-
   return (
     <main>
       <header className="site-header">
@@ -29,39 +26,18 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
-        <div className="hero-pattern" aria-hidden="true" />
         <div className="hero-copy">
-          <span className="hero-kicker"><span>🇺🇦</span> Built between Ukraine and California</span>
-          <h1>Ukrainian ideas.<br /><em>Valley momentum.</em></h1>
+          <span className="hero-kicker">Spilni · Спільні</span>
+          <h1>Ukrainian startups in Silicon Valley.</h1>
           <p>
-            A living directory of Ukrainian-founded startups building ambitious commercial,
-            defense, and dual-use technology in the Silicon Valley ecosystem.
+            A curated list of Ukrainian-founded commercial, defense, and dual-use companies
+            with a connection to the Bay Area.
           </p>
           <div className="hero-actions">
-            <a className="primary-button" href="#directory">Explore the directory <span>↓</span></a>
-            <a className="text-link" href="https://github.com/OlexG/spilni/issues/new?title=Suggest%20a%20startup">Add a company <span>↗</span></a>
-          </div>
-        </div>
-        <div className="hero-panel" aria-label="Directory summary">
-          <div className="panel-label"><span>Curated index</span><span>Updated 2026</span></div>
-          <div className="panel-map" aria-hidden="true">
-            <span className="map-city kyiv">Kyiv <i /></span>
-            <span className="map-line" />
-            <span className="map-city sf"><i /> San Francisco</span>
-          </div>
-          <div className="panel-stats">
-            <div><strong>{startups.length}</strong><span>Startups</span></div>
-            <div><strong>{defenseCount}</strong><span>Defense + dual-use</span></div>
-            <div><strong>2</strong><span>Valley connection types</span></div>
+            <a className="primary-button" href="#directory">View the directory</a>
           </div>
         </div>
       </section>
-
-      <div className="trust-strip" aria-label="Directory principles">
-        <span>Curated, not scraped</span><i />
-        <span>Sources on every card</span><i />
-        <span>Built for the Ukrainian founder community</span>
-      </div>
 
       <StartupDirectory />
 
