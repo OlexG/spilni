@@ -29,7 +29,8 @@ export default function StartupDirectory() {
     if (!normalized) return startups;
 
     return startups.filter((startup) => {
-      const haystack = `${startup.name} ${startup.focus} ${startup.location} ${startup.batch} ${startup.description}`.toLowerCase();
+      const founderNames = startup.founders.map((founder) => founder.name).join(" ");
+      const haystack = `${startup.name} ${startup.focus} ${startup.location} ${startup.batch} ${startup.description} ${founderNames}`.toLowerCase();
       return haystack.includes(normalized);
     });
   }, [query]);
@@ -51,7 +52,7 @@ export default function StartupDirectory() {
 
       <div className="results-meta" aria-live="polite">
         <strong>{visibleStartups.length}</strong> {visibleStartups.length === 1 ? "company" : "companies"}
-        {query && <button type="button" onClick={() => setQuery("")}>Clear search</button>}
+        {query ? <button type="button" onClick={() => setQuery("")}>Clear search</button> : null}
       </div>
 
       {visibleStartups.length > 0 ? (
@@ -71,6 +72,16 @@ export default function StartupDirectory() {
               <dl className="card-details">
                 <div><dt>Focus</dt><dd>{startup.focus}</dd></div>
                 <div><dt>Based</dt><dd>{startup.location}</dd></div>
+                <div>
+                  <dt>Ukrainian founders</dt>
+                  <dd className="founder-links">
+                    {startup.founders.map((founder) => (
+                      <a key={founder.name} href={founder.linkedin} target="_blank" rel="noreferrer">
+                        {founder.name}<span aria-hidden="true">↗</span>
+                      </a>
+                    ))}
+                  </dd>
+                </div>
               </dl>
               <div className="card-footer">
                 <a href={startup.website} target="_blank" rel="noreferrer">

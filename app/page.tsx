@@ -1,4 +1,5 @@
 import StartupDirectory from "@/components/StartupDirectory";
+import Image from "next/image";
 
 function Mark() {
   return (
@@ -25,13 +26,19 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
-        <div className="hero-copy">
-          <h1>Ukrainian startups in <em>Silicon Valley.</em></h1>
-          <p>
-            A focused list of recent Y Combinator startups built by Ukrainian founders.
-          </p>
-          <div className="hero-actions">
-            <a className="primary-button" href="#directory">View the directory</a>
+        <div className="hero-inner">
+          <div className="hero-copy">
+            <h1>Ukrainian startups in <em>Silicon Valley.</em></h1>
+            <p>
+              A focused list of recent Y Combinator startups built by Ukrainian founders.
+            </p>
+            <div className="hero-actions">
+              <a className="primary-button" href="#directory">View the directory</a>
+            </div>
+          </div>
+          <div className="hero-art" aria-hidden="true">
+            <Image className="hero-art-animated" src="/illustrations/hero-plane.gif" alt="" width={220} height={210} unoptimized />
+            <Image className="hero-art-still" src="/illustrations/hero-plane-still.png" alt="" width={220} height={210} />
           </div>
         </div>
       </section>

@@ -7,6 +7,10 @@ export type Startup = {
   description: string;
   website: string;
   source: string;
+  founders: Array<{
+    name: string;
+    linkedin: string;
+  }>;
 };
 
 export const startups: Startup[] = [
@@ -19,6 +23,9 @@ export const startups: Startup[] = [
     description: "Counter-drone systems and AI mission software built for modern defense operations.",
     website: "https://9mothers.com/",
     source: "https://www.ycombinator.com/companies/9-mothers-corporation",
+    founders: [
+      { name: "Roman Khomenko", linkedin: "https://www.linkedin.com/in/dowakin/" },
+    ],
   },
   {
     name: "Sparkles",
@@ -29,6 +36,9 @@ export const startups: Startup[] = [
     description: "An AI workspace that helps teams safely make changes to existing codebases.",
     website: "https://sparkles.dev/",
     source: "https://www.ycombinator.com/companies/sparkles",
+    founders: [
+      { name: "Daniil Bekirov", linkedin: "https://www.linkedin.com/in/aidaniilbekirov/" },
+    ],
   },
   {
     name: "Prox",
@@ -39,6 +49,10 @@ export const startups: Startup[] = [
     description: "Multimodal AI support for companies that make complex physical products.",
     website: "https://useprox.com/",
     source: "https://www.ycombinator.com/companies/prox",
+    founders: [
+      { name: "Dima Yanovsky", linkedin: "https://www.linkedin.com/in/yanovsk/" },
+      { name: "Gregory Makodzeba", linkedin: "https://www.linkedin.com/in/gregory-makodzeba/" },
+    ],
   },
   {
     name: "AiSDR",
@@ -49,5 +63,9 @@ export const startups: Startup[] = [
     description: "AI sales agents that handle prospecting, follow-ups, and meeting booking.",
     website: "https://aisdr.com/",
     source: "https://www.ycombinator.com/companies/aisdr",
+    founders: [
+      { name: "Yuriy Zaremba", linkedin: "https://www.linkedin.com/in/yuriy-zaremba" },
+      { name: "Oleg Zaremba", linkedin: "https://www.linkedin.com/in/oleg-zaremba" },
+    ],
   },
 ];
