@@ -36,15 +36,7 @@ export default function StartupDirectory() {
   }, [filter, query]);
 
   return (
-    <section className="directory" id="directory" aria-labelledby="directory-title">
-      <div className="section-heading">
-        <div>
-          <span className="eyebrow">The directory</span>
-          <h2 id="directory-title">Meet the builders</h2>
-        </div>
-        <p>Ukrainian-founded teams with a Bay Area base or a verified Silicon Valley program connection.</p>
-      </div>
-
+    <section className="directory" id="directory" aria-label="Startup directory">
       <div className="toolbar" aria-label="Directory controls">
         <label className="search-field">
           <span className="sr-only">Search startups</span>
