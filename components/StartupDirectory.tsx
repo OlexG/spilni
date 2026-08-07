@@ -31,14 +31,14 @@ export default function StartupDirectory() {
 
     return startups.filter((startup) => {
       const founderNames = startup.founders.map((founder) => founder.name).join(" ");
-      const haystack = `${startup.name} ${startup.focus} ${startup.location} ${startup.batch} ${startup.description} ${founderNames}`.toLowerCase();
+      const haystack = `${startup.name} ${startup.focus} ${startup.location} ${startup.tags.join(" ")} ${startup.momentum} ${startup.description} ${founderNames}`.toLowerCase();
       return haystack.includes(normalized);
     });
   }, [query]);
 
   return (
-    <section className="directory" id="directory" aria-label="YC startup directory">
-      <h2 className="sr-only">Recent Ukrainian-founded and Ukraine-connected Y Combinator startups</h2>
+    <section className="directory" id="directory" aria-label="Ukrainian startup directory">
+      <h2 className="sr-only">Hot Ukrainian-founded and Ukraine-connected startups</h2>
       <div className="toolbar" aria-label="Directory search">
         <label className="search-field">
           <span className="sr-only">Search startups</span>
@@ -65,7 +65,12 @@ export default function StartupDirectory() {
                 <div className="company-logo">
                   <Image src={startup.logo} alt={`${startup.name} logo`} width={52} height={52} />
                 </div>
-                <span className="yc-badge">YC {startup.batch}</span>
+                <div className="card-tags">
+                  {startup.accelerator ? <span className="yc-badge">YC {startup.accelerator.batch}</span> : null}
+                  {startup.tags.filter((tag) => !tag.startsWith("YC ")).slice(0, 2).map((tag) => (
+                    <span className={tag === "Defense" ? "startup-tag defense-tag" : "startup-tag"} key={tag}>{tag}</span>
+                  ))}
+                </div>
               </div>
               <div className="card-copy">
                 <h3><Link href={`/startups/${startup.slug}`}>{startup.name}</Link></h3>
@@ -75,7 +80,7 @@ export default function StartupDirectory() {
                 <div><dt>Focus</dt><dd>{startup.focus}</dd></div>
                 <div><dt>Based</dt><dd>{startup.location}</dd></div>
                 <div>
-                  <dt>{startup.connectionLabel === "Ukrainian-founded" ? "Ukrainian founders" : "Ukraine connection"}</dt>
+                  <dt>Founders</dt>
                   <dd className="founder-links">
                     {startup.founders.map((founder) => (
                       <a key={founder.name} href={founder.linkedin} target="_blank" rel="noreferrer">
@@ -89,7 +94,11 @@ export default function StartupDirectory() {
                 <a href={startup.website} target="_blank" rel="noreferrer">
                   Visit company <ArrowIcon />
                 </a>
-                <a className="source-link" href={startup.ycProfile} target="_blank" rel="noreferrer">YC profile</a>
+                {startup.accelerator ? (
+                  <a className="source-link" href={startup.accelerator.profile} target="_blank" rel="noreferrer">YC profile</a>
+                ) : (
+                  <a className="source-link" href={startup.sources[0].url} target="_blank" rel="noreferrer">Evidence</a>
+                )}
               </div>
             </article>
           ))}

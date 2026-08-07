@@ -19,10 +19,10 @@ export async function generateMetadata({ params }: StartupPageProps): Promise<Me
   if (!startup) return {};
 
   const connectionTitle = startup.connectionLabel === "Ukrainian-founded"
-    ? "Ukrainian-Founded YC Startup"
-    : "Ukraine-Connected YC Startup";
+    ? "Ukrainian-Founded Startup"
+    : "Ukraine-Connected Startup";
   const title = `${startup.name}: ${connectionTitle}`;
-  const description = `${startup.description} ${startup.name} is ${startup.connectionLabel.toLowerCase()} and joined YC’s ${startup.batch} batch.`;
+  const description = `${startup.description} ${startup.momentum}`;
   const url = `/startups/${startup.slug}`;
 
   return {
@@ -45,7 +45,7 @@ export default async function StartupPage({ params }: StartupPageProps) {
         "@type": "WebPage",
         "@id": `${pageUrl}#webpage`,
         url: pageUrl,
-        name: `${startup.name}: ${startup.connectionLabel === "Ukrainian-founded" ? "Ukrainian-Founded" : "Ukraine-Connected"} YC Startup`,
+        name: `${startup.name}: ${startup.connectionLabel === "Ukrainian-founded" ? "Ukrainian-Founded" : "Ukraine-Connected"} Startup`,
         description: startup.answer,
         dateModified: startup.lastReviewed,
         lastReviewed: startup.lastReviewed,
@@ -63,7 +63,7 @@ export default async function StartupPage({ params }: StartupPageProps) {
         logo: `https://spilni.com${startup.logo}`,
         foundingDate: String(startup.foundedYear),
         description: startup.description,
-        sameAs: [startup.website, startup.ycProfile],
+        sameAs: [startup.website, startup.accelerator?.profile].filter(Boolean),
         founder: startup.founders.map((founder) => ({ "@id": `${pageUrl}#${founder.name.toLowerCase().replaceAll(" ", "-")}` })),
         mainEntityOfPage: { "@id": `${pageUrl}#webpage` },
       },
@@ -99,18 +99,18 @@ export default async function StartupPage({ params }: StartupPageProps) {
         <header className="profile-hero">
           <div className="profile-logo"><Image src={startup.logo} alt={`${startup.name} logo`} width={92} height={92} priority /></div>
           <div>
-            <p className="profile-kicker">{startup.connectionLabel} · YC {startup.batch}</p>
+            <p className="profile-kicker">{startup.connectionLabel} · {startup.tags[0]}</p>
             <h1>{startup.name}</h1>
             <p className="profile-answer">{startup.answer}</p>
             <div className="page-actions">
               <a className="primary-button" href={startup.website}>Visit {startup.name} ↗</a>
-              <a href={startup.ycProfile}>Y Combinator profile ↗</a>
+              {startup.accelerator ? <a href={startup.accelerator.profile}>YC {startup.accelerator.batch} profile ↗</a> : null}
             </div>
           </div>
         </header>
 
         <dl className="profile-facts">
-          <div><dt>YC batch</dt><dd>{startup.batch}</dd></div>
+          {startup.accelerator ? <div><dt>Accelerator</dt><dd>YC {startup.accelerator.batch}</dd></div> : null}
           <div><dt>Founded</dt><dd>{startup.foundedYear}</dd></div>
           <div><dt>Location</dt><dd>{startup.location}</dd></div>
           <div><dt>Focus</dt><dd>{startup.focus}</dd></div>
@@ -119,16 +119,17 @@ export default async function StartupPage({ params }: StartupPageProps) {
         </dl>
 
         <section className="profile-section">
+          <h2>Why it’s hot</h2>
+          <p>{startup.momentum}</p>
+        </section>
+
+        <section className="profile-section">
           <h2>Ukrainian connection</h2>
           <p>{startup.inclusionReason}</p>
         </section>
 
         <section className="profile-section">
-          <h2>
-            {startup.connectionLabel === "Ukrainian-founded"
-              ? `Ukrainian ${startup.founders.length === 1 ? "founder" : "founders"}`
-              : `${startup.founders.length === 1 ? "Founder" : "Founders"} with a Ukraine connection`}
-          </h2>
+          <h2>{startup.founders.length === 1 ? "Founder" : "Founders"}</h2>
           <div className="founder-profiles">
             {startup.founders.map((founder) => (
               <article key={founder.name}>

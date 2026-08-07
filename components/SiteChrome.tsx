@@ -30,7 +30,7 @@ export function SiteFooter() {
   return (
     <footer>
       <Link className="brand footer-brand" href="/"><Mark /><span>spilni</span></Link>
-      <p>Ukrainian founders, connected through Y Combinator.</p>
+      <p>Ukrainian founders building globally.</p>
       <div className="footer-links">
         <Link href="/methodology">Methodology</Link>
         <Link href="/data">Open data</Link>

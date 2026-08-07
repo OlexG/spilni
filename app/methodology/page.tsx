@@ -6,7 +6,7 @@ import { DIRECTORY_REVIEWED_AT } from "@/lib/startups";
 
 export const metadata: Metadata = {
   title: "Directory Methodology",
-  description: "How Spilni verifies Ukrainian-founded and Ukraine-connected Y Combinator startups, founders, locations, and sources.",
+  description: "How Spilni verifies high-momentum Ukrainian startups, founders, Western ties, traction, funding, and sources.",
   alternates: { canonical: "/methodology" },
   openGraph: { url: "/methodology", title: "Directory Methodology | Spilni", type: "article" },
 };
@@ -17,7 +17,7 @@ const jsonLd = {
   "@id": "https://spilni.com/methodology#webpage",
   url: "https://spilni.com/methodology",
   name: "Spilni directory methodology",
-  description: "How Spilni verifies Ukrainian-founded and Ukraine-connected Y Combinator startups.",
+  description: "How Spilni verifies high-momentum Ukrainian-founded and Ukraine-connected startups.",
   dateModified: DIRECTORY_REVIEWED_AT,
   isPartOf: { "@id": "https://spilni.com/#website" },
 };
@@ -34,15 +34,15 @@ export default function MethodologyPage() {
 
         <section>
           <h2>What qualifies</h2>
-          <p>A company must be in Y Combinator and have a documented Ukrainian founder or a substantial, public connection to Ukraine. “Ukrainian-founded” means a credible source identifies at least one founder as Ukrainian. “Ukraine-connected” covers a documented connection that does not justify a nationality claim.</p>
+          <p>A company must have a documented Ukrainian founder or a substantial, public operational connection to Ukraine. It must also show meaningful momentum in the last 18 months through funding, revenue, customer adoption, battlefield deployment, production scale, or a strategic Western partnership. “Ukrainian-founded” means a credible source identifies at least one founder as Ukrainian. “Ukraine-connected” covers a documented connection that does not justify a nationality claim.</p>
         </section>
         <section>
-          <h2>What Silicon Valley means here</h2>
-          <p>In this directory, Silicon Valley connection means participation in the Y Combinator ecosystem. It does not imply that every company is headquartered in Silicon Valley. We list the current location reported by YC separately.</p>
+          <h2>How global ties are treated</h2>
+          <p>Western and global ties can include investors, customers, accelerator participation, manufacturing partnerships, allied-government programs, or headquarters and operating teams in North America or Europe. Y Combinator participation appears as an optional company tag; it is never an inclusion requirement.</p>
         </section>
         <section>
           <h2>How facts are checked</h2>
-          <p>We prefer official company pages, Y Combinator profiles, founder profiles, and direct interviews. Independent reporting can establish Ukrainian roots when a primary source is unavailable. Each company page states which facts each citation supports.</p>
+          <p>We prefer official company and investor announcements, founder profiles, accelerator records, government documents, and direct interviews. Independent reporting can establish Ukrainian roots or validate momentum when a primary source is unavailable. Each company page states which facts each citation supports.</p>
         </section>
         <section>
           <h2>Freshness and corrections</h2>
