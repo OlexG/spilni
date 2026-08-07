@@ -1,5 +1,5 @@
+import PaperPlane from "@/components/PaperPlane";
 import StartupDirectory from "@/components/StartupDirectory";
-import Image from "next/image";
 
 function Mark() {
   return (
@@ -37,7 +37,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-art" aria-hidden="true">
-            <Image src="/illustrations/hero-plane-still.png" alt="" width={220} height={210} priority />
+            <PaperPlane />
           </div>
         </div>
       </section>

@@ -102,7 +102,7 @@ nav a:not(.nav-cta):hover { color: var(--blue); }
   background: radial-gradient(closest-side, rgba(0, 87, 184, 0.1), rgba(0, 87, 184, 0) 72%);
   animation: hero-glow 7s var(--ease) infinite;
 }
-.hero-art img { position: relative; display: block; width: 100%; height: auto; transform-origin: 30% 70%; animation: hero-float 7s var(--ease) infinite; }
+.hero-art svg { position: relative; display: block; width: 100%; height: auto; overflow: visible; transform-origin: 30% 70%; animation: hero-float 7s var(--ease) infinite; }
 
 @keyframes hero-float {
   0%, 100% { transform: translate3d(0, 4px, 0) rotate(2deg); }
@@ -198,5 +198,5 @@ footer > div { display: flex; gap: 18px; color: var(--muted); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation: none !important; }
-  .hero-art img { transform: rotate(2deg); }
+  .hero-art svg { transform: rotate(2deg); }
 }
