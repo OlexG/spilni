@@ -37,8 +37,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-art" aria-hidden="true">
-            <Image className="hero-art-animated" src="/illustrations/hero-plane.gif" alt="" width={220} height={210} unoptimized />
-            <Image className="hero-art-still" src="/illustrations/hero-plane-still.png" alt="" width={220} height={210} />
+            <Image src="/illustrations/hero-plane-still.png" alt="" width={220} height={210} priority />
           </div>
         </div>
       </section>
