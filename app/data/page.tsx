@@ -6,7 +6,7 @@ import { DIRECTORY_REVIEWED_AT, startups } from "@/lib/startups";
 
 export const metadata: Metadata = {
   title: "Open Startup Directory Data",
-  description: "Machine-readable JSON data for Spilni’s sourced directory of Ukrainian-founded and Ukraine-connected YC startups.",
+  description: "Machine-readable JSON data for Spilni’s sourced directory of high-momentum Ukrainian startups and founders.",
   alternates: { canonical: "/data", types: { "application/json": "/data/startups.json" } },
   openGraph: { url: "/data", title: "Open Startup Directory Data | Spilni", type: "website" },
 };
@@ -16,13 +16,13 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Dataset",
   "@id": "https://spilni.com/data#dataset",
-  name: "Ukrainian Y Combinator Startups and Founders",
-  description: "A curated dataset of Ukrainian-founded and Ukraine-connected Y Combinator companies, founders, batches, locations, and supporting sources.",
+  name: "High-Momentum Ukrainian Startups and Founders",
+  description: "A curated dataset of Ukrainian-founded and Ukraine-connected companies, founders, momentum, global ties, locations, and supporting sources.",
   url: "https://spilni.com/data",
   dateModified: DIRECTORY_REVIEWED_AT,
   creator: { "@id": "https://spilni.com/#organization" },
   isBasedOn: sourceUrls,
-  variableMeasured: ["company", "founder", "YC batch", "location", "sector", "Ukraine connection", "source"],
+  variableMeasured: ["company", "founder", "momentum", "accelerator", "location", "sector", "Ukraine connection", "source"],
   distribution: {
     "@type": "DataDownload",
     encodingFormat: "application/json",
@@ -42,7 +42,7 @@ export default function DataPage() {
         <a className="data-download" href="/data/startups.json">Download startups.json <span>↗</span></a>
         <section>
           <h2>What is included</h2>
-          <p>{startups.length} company records with stable URLs, founder names and LinkedIn profiles, YC batches, locations, Ukrainian connection notes, and claim-level source links.</p>
+          <p>{startups.length} company records with stable URLs, founder names and LinkedIn profiles, momentum signals, optional accelerator tags, locations, Ukrainian connection notes, and claim-level source links.</p>
         </section>
         <section>
           <h2>Review status</h2>

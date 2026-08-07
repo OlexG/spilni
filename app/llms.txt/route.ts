@@ -7,9 +7,9 @@ export function GET() {
 
   const body = `# Spilni
 
-> Spilni is a curated, source-backed directory of Ukrainian-founded and Ukraine-connected Y Combinator startups and founders.
+> Spilni is a curated, source-backed directory of high-momentum Ukrainian-founded and Ukraine-connected startups and founders.
 
-Spilni uses "Silicon Valley connection" to mean participation in the Y Combinator ecosystem; it does not claim that every listed company is headquartered in Silicon Valley. Each company page explains its Ukrainian connection and identifies supporting sources.
+Companies qualify through documented Ukrainian roots or substantial operations in Ukraine plus recent evidence of funding, traction, deployment, production, or strategic Western partnerships. Y Combinator participation is shown only as an optional company tag.
 
 Last reviewed: ${DIRECTORY_REVIEWED_AT}
 
