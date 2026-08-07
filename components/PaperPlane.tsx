@@ -81,12 +81,13 @@ export default function PaperPlane() {
           </g>
 
           <g stroke={INK} strokeWidth="5" strokeLinejoin="round">
-            <Sparkle x={208} y={72} r={26} delay="0s" />
+            <Sparkle x={212} y={70} r={26} delay="0s" />
             <Sparkle x={140} y={16} r={12} delay="-2.4s" />
-            <Sparkle x={182} y={142} r={9} delay="-1.1s" />
-            <circle className="plane-twinkle" style={{ animationDelay: "-3.1s" }} cx={232} cy={26} r={8.5} strokeWidth="4.6" fill={YELLOW} />
-            <circle className="plane-twinkle" style={{ animationDelay: "-1.7s" }} cx={226} cy={132} r={7} strokeWidth="4" fill={YELLOW} />
+            <Sparkle x={182} y={142} r={11} delay="-1.1s" />
+            <circle className="plane-twinkle" style={{ animationDelay: "-3.1s" }} cx={238} cy={24} r={8.5} strokeWidth="4.6" fill={YELLOW} />
+            <circle className="plane-twinkle" style={{ animationDelay: "-1.7s" }} cx={232} cy={130} r={7} strokeWidth="4" fill={YELLOW} />
             <circle className="plane-twinkle" style={{ animationDelay: "-3.8s" }} cx={148} cy={188} r={6.5} strokeWidth="3.8" fill={YELLOW} />
+            <circle className="plane-twinkle" style={{ animationDelay: "-2.9s" }} cx={214} cy={180} r={5.5} strokeWidth="3.4" fill={YELLOW} />
           </g>
         </svg>
       </span>
