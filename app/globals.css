@@ -79,8 +79,9 @@ nav a:not(.nav-cta):hover { color: var(--blue); }
 }
 
 .hero-copy { max-width: 900px; }
-.hero-kicker { color: var(--blue); font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
-.hero h1 { max-width: 840px; margin: 20px 0 22px; font-size: clamp(48px, 7vw, 86px); font-weight: 900; letter-spacing: -0.065em; line-height: 0.96; }
+.hero h1 { max-width: 940px; margin: 0 0 22px; font-size: clamp(48px, 7vw, 86px); font-weight: 900; letter-spacing: -0.065em; line-height: 0.96; }
+.hero h1 em { position: relative; z-index: 0; color: var(--blue); font-style: normal; white-space: nowrap; }
+.hero h1 em::after { content: ""; position: absolute; z-index: -1; right: -1%; bottom: 3%; left: 0; height: 15%; background: var(--yellow); }
 .hero-copy > p { max-width: 680px; margin: 0; color: var(--muted); font-size: clamp(17px, 1.7vw, 20px); font-weight: 500; line-height: 1.55; }
 .hero-actions { margin-top: 32px; }
 .primary-button { display: inline-flex; min-height: 46px; align-items: center; padding: 0 19px; border-radius: 999px; background: var(--blue); color: white; font-size: 13px; font-weight: 800; transition: background 160ms ease; }

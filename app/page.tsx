@@ -26,8 +26,7 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <span className="hero-kicker">Spilni · Спільні</span>
-          <h1>Ukrainian startups in Silicon Valley.</h1>
+          <h1>Ukrainian startups in <em>Silicon Valley.</em></h1>
           <p>
             A curated list of Ukrainian-founded commercial, defense, and dual-use companies
             with a connection to the Bay Area.
