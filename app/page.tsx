@@ -20,7 +20,6 @@ export default function Home() {
         </a>
         <nav aria-label="Main navigation">
           <a href="#directory">Directory</a>
-          <a href="#about">About</a>
           <a className="nav-cta" href="https://github.com/OlexG/spilni/issues/new?title=Suggest%20a%20startup">Suggest a startup</a>
         </nav>
       </header>
@@ -40,24 +39,6 @@ export default function Home() {
       </section>
 
       <StartupDirectory />
-
-      <section className="about" id="about">
-        <div>
-          <span className="eyebrow">Why Spilni</span>
-          <h2>“Together” is the whole point.</h2>
-        </div>
-        <div className="about-copy">
-          <p>
-            <strong>Спільні</strong> means shared or together. This directory makes the people and products
-            connecting Ukraine with Silicon Valley easier to discover—without flattening every connection
-            into a headquarters claim.
-          </p>
-          <p>
-            Companies are included when they have Ukrainian founding roots and either a Bay Area base or a
-            documented Silicon Valley accelerator, residency, or ecosystem presence.
-          </p>
-        </div>
-      </section>
 
       <section className="submit-banner">
         <div>
