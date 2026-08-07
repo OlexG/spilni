@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import { startups } from "@/lib/startups";
 
@@ -37,6 +38,7 @@ export default function StartupDirectory() {
 
   return (
     <section className="directory" id="directory" aria-label="YC startup directory">
+      <h2 className="sr-only">Recent Ukrainian-founded and Ukraine-connected Y Combinator startups</h2>
       <div className="toolbar" aria-label="Directory search">
         <label className="search-field">
           <span className="sr-only">Search startups</span>
@@ -66,7 +68,7 @@ export default function StartupDirectory() {
                 <span className="yc-badge">YC {startup.batch}</span>
               </div>
               <div className="card-copy">
-                <h3>{startup.name}</h3>
+                <h3><Link href={`/startups/${startup.slug}`}>{startup.name}</Link></h3>
                 <p>{startup.description}</p>
               </div>
               <dl className="card-details">
@@ -87,7 +89,7 @@ export default function StartupDirectory() {
                 <a href={startup.website} target="_blank" rel="noreferrer">
                   Visit company <ArrowIcon />
                 </a>
-                <a className="source-link" href={startup.source} target="_blank" rel="noreferrer">YC profile</a>
+                <a className="source-link" href={startup.ycProfile} target="_blank" rel="noreferrer">YC profile</a>
               </div>
             </article>
           ))}

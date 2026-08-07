@@ -1,15 +1,42 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Spilni — Ukrainian Startups in Silicon Valley",
-  description: "A focused directory of recent Y Combinator startups built by Ukrainian founders.",
   metadataBase: new URL("https://spilni.com"),
+  title: {
+    default: "Ukrainian Y Combinator Startups & Founders | Spilni",
+    template: "%s | Spilni",
+  },
+  description: "A sourced directory of Ukrainian-founded and Ukraine-connected Y Combinator startups, founders, batches, locations, and official links.",
+  applicationName: "Spilni",
+  creator: "Spilni",
+  publisher: "Spilni",
+  category: "technology",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
-    title: "Spilni — Ukrainian Startups in Silicon Valley",
-    description: "Recent Y Combinator startups built by Ukrainian founders.",
+    siteName: "Spilni",
+    locale: "en_US",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+  },
+  manifest: "/manifest.webmanifest",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#fffefa",
+  colorScheme: "light",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

@@ -1,6 +1,6 @@
 # Spilni
 
-A focused directory of recent Y Combinator startups built by Ukrainian founders.
+A source-backed directory of Ukrainian-founded and Ukraine-connected Y Combinator startups and founders. Live at [spilni.com](https://spilni.com/).
 
 ## Design rationale
 
@@ -19,4 +19,12 @@ npm install
 npm run build
 ```
 
-Startup records live in `lib/startups.ts`. Each entry includes its official Y Combinator profile and a local logo asset.
+Startup records live in `lib/startups.ts`. Each entry includes its official Y Combinator profile, Ukrainian-connection evidence, founders, citations, and a local logo asset.
+
+## Discovery endpoints
+
+- `/sitemap.xml` — canonical indexable pages
+- `/robots.txt` — crawler permissions and sitemap location
+- `/llms.txt` — concise guide for answer engines and assistants
+- `/data/startups.json` — machine-readable directory records
+- `/methodology` — inclusion rules, sourcing, freshness, and corrections
