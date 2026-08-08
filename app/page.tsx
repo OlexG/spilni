@@ -97,6 +97,7 @@ export default function Home() {
             <p>
               Funding stages, hiring status, founder LinkedIn profiles, and sources.
             </p>
+            <InterestSignup />
             <div className="hero-actions">
               <a className="primary-button" href="#directory">View directory</a>
             </div>
@@ -109,7 +110,6 @@ export default function Home() {
             <div className="hero-art" aria-hidden="true">
               <PaperPlane />
             </div>
-            <InterestSignup />
           </div>
         </div>
       </section>

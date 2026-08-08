@@ -15,18 +15,12 @@ export default function InterestSignup() {
   return (
     <section className="hero-signup" id="updates" aria-labelledby="interest-title">
       <div className="signup-heading">
-        <span className="signup-kicker"><i /> Join the network</span>
-        <h2 id="interest-title">Updates &amp; startup intros.</h2>
-        <p>One email. You choose what reaches your inbox.</p>
+        <h2 id="interest-title">Get updates and startup introductions.</h2>
       </div>
 
       <form className="signup-form" action={formAction}>
         <label className="sr-only" htmlFor="interest-email">Email address</label>
         <div className="signup-control">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <path d="M4 6.75h16v10.5H4z" />
-            <path d="m5 8 7 5 7-5" />
-          </svg>
           <input
             id="interest-email"
             name="email"
@@ -38,10 +32,7 @@ export default function InterestSignup() {
             required
           />
           <button type="submit" disabled={isPending}>
-            <span>{isPending ? "Joining…" : "Join"}</span>
-            <svg aria-hidden="true" viewBox="0 0 20 20">
-              <path d="M4 10h11M11 6l4 4-4 4" />
-            </svg>
+            {isPending ? "Joining…" : "Join"}
           </button>
         </div>
 

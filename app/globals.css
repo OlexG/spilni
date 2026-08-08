@@ -95,8 +95,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .primary-button:hover { background: var(--blue-dark); box-shadow: 0 10px 24px rgba(0, 87, 184, 0.28); transform: translateY(-1px); }
 .directory-status { margin-top: 18px !important; color: #747b83 !important; font-size: 11px !important; font-weight: 700 !important; }
 .directory-status a { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
-.hero-side { position: relative; width: 100%; max-width: 460px; justify-self: end; }
-.hero-art { position: absolute; z-index: 0; top: -92px; right: -12px; width: 168px; opacity: 0.92; }
+.hero-side { position: relative; width: 100%; max-width: 390px; min-height: 300px; justify-self: end; }
+.hero-art { position: absolute; z-index: 0; top: 20px; right: 20px; width: clamp(180px, 22vw, 280px); opacity: 0.92; }
 .hero-art::before {
   content: "";
   position: absolute;
@@ -259,22 +259,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .empty-state p { color: var(--muted); }
 .empty-state button { padding: 11px 16px; border: 0; border-radius: 999px; background: var(--ink); color: white; cursor: pointer; font-weight: 800; }
 
-.hero-signup { position: relative; z-index: 1; padding: 26px; overflow: hidden; border: 1px solid rgba(17, 24, 32, 0.13); border-radius: 24px; background: rgba(255, 254, 250, 0.88); box-shadow: 0 2px 3px rgba(17, 24, 32, 0.03), 0 24px 60px rgba(17, 24, 32, 0.11); backdrop-filter: blur(18px); transition: border-color 180ms var(--ease), box-shadow 180ms var(--ease), transform 180ms var(--ease); }
-.hero-signup::before { content: ""; position: absolute; inset: 0 0 auto; height: 3px; background: linear-gradient(90deg, var(--blue) 0 72%, var(--yellow) 72%); }
-.hero-signup:focus-within { border-color: rgba(0, 87, 184, 0.38); box-shadow: 0 2px 3px rgba(17, 24, 32, 0.03), 0 28px 70px rgba(0, 87, 184, 0.15); transform: translateY(-2px); }
-.signup-kicker { display: flex; align-items: center; gap: 8px; margin-bottom: 11px; color: var(--blue); font-size: 10px; font-weight: 900; letter-spacing: 0.11em; text-transform: uppercase; }
-.signup-kicker i { width: 7px; height: 7px; border-radius: 50%; background: var(--yellow); box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.18); }
-.signup-heading h2 { margin: 0; font-size: clamp(27px, 3vw, 35px); font-weight: 900; letter-spacing: -0.045em; line-height: 1.02; }
-.signup-heading p { margin: 10px 0 21px; color: var(--muted); font-size: 13px; font-weight: 600; line-height: 1.5; }
-.signup-control { display: flex; align-items: center; gap: 8px; padding: 5px 5px 5px 14px; border: 1px solid var(--line); border-radius: 15px; background: white; box-shadow: inset 0 1px 2px rgba(17, 24, 32, 0.025); transition: border-color 160ms var(--ease), box-shadow 160ms var(--ease); }
+.hero-signup { max-width: 620px; margin-top: 26px; }
+.signup-heading h2 { margin: 0 0 10px; font-size: 13px; font-weight: 850; letter-spacing: -0.01em; }
+.signup-control { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
 .signup-control:focus-within { border-color: rgba(0, 87, 184, 0.65); box-shadow: 0 0 0 4px rgba(0, 87, 184, 0.1); }
-.signup-control > svg { width: 18px; flex: 0 0 auto; fill: none; stroke: #7a8188; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
-.signup-control input { width: 100%; min-width: 0; padding: 10px 0; border: 0; outline: 0; background: transparent; color: var(--ink); font-size: 13px; font-weight: 700; }
+.signup-control input { width: 100%; min-width: 0; min-height: 44px; padding: 0 14px; border: 1px solid var(--line); border-radius: 11px; outline: 0; background: white; color: var(--ink); font-size: 13px; font-weight: 700; }
+.signup-control input:focus { border-color: rgba(0, 87, 184, 0.65); box-shadow: 0 0 0 3px rgba(0, 87, 184, 0.1); }
 .signup-control input::placeholder { color: #858b91; }
-.signup-control button { display: inline-flex; min-height: 42px; align-items: center; gap: 7px; padding: 0 15px; border: 0; border-radius: 11px; background: var(--ink); color: white; cursor: pointer; font-size: 12px; font-weight: 900; transition: background 160ms var(--ease), transform 160ms var(--ease); }
-.signup-control button svg { width: 16px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; transition: transform 160ms var(--ease); }
+.signup-control button { min-height: 44px; padding: 0 19px; border: 0; border-radius: 11px; background: var(--ink); color: white; cursor: pointer; font-size: 12px; font-weight: 900; transition: background 160ms var(--ease), transform 160ms var(--ease); }
 .signup-control button:hover { background: var(--blue); transform: translateY(-1px); }
-.signup-control button:hover svg { transform: translateX(2px); }
 .signup-control button:disabled { cursor: wait; opacity: 0.6; transform: none; }
 .signup-options { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
 .signup-choice { position: relative; cursor: pointer; }
@@ -359,8 +352,7 @@ footer > div { display: flex; gap: 18px; color: var(--muted); }
 @media (max-width: 1000px) {
   .hero-inner { grid-template-columns: 1fr; }
   .hero-copy { max-width: 860px; }
-  .hero-side { max-width: 620px; justify-self: start; margin-top: 46px; }
-  .hero-art { top: -100px; right: -28px; }
+  .hero-side { display: none; }
   .startup-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .toolbar { align-items: stretch; flex-direction: column; }
   .search-field { min-height: 44px; }
@@ -375,13 +367,7 @@ footer > div { display: flex; gap: 18px; color: var(--muted); }
   .hero-inner { display: grid; }
   .hero h1 { font-size: clamp(43px, 13vw, 62px); }
   .hero-copy > p { font-size: 16px; }
-  .hero-side { margin-top: 35px; }
-  .hero-art { top: -72px; right: -8px; width: 128px; }
-  .hero-signup { padding: 22px; border-radius: 20px; }
-  .signup-control { align-items: stretch; flex-wrap: wrap; padding: 8px; }
-  .signup-control > svg { display: none; }
-  .signup-control input { min-height: 40px; padding: 8px 6px; }
-  .signup-control button { width: 100%; justify-content: center; }
+  .signup-control { grid-template-columns: minmax(0, 1fr) auto; }
   .directory { padding: 80px 18px 90px; }
   .search-field { min-width: 0; }
   .startup-grid { grid-template-columns: 1fr; }
