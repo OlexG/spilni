@@ -5,11 +5,6 @@ export type InterestActionState = {
   message: string;
 };
 
-export const initialInterestActionState: InterestActionState = {
-  status: "idle",
-  message: "",
-};
-
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function submitInterest(

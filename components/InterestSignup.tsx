@@ -2,9 +2,14 @@
 
 import { useActionState } from "react";
 import {
-  initialInterestActionState,
   submitInterest,
+  type InterestActionState,
 } from "@/app/interest-actions";
+
+const initialInterestActionState: InterestActionState = {
+  status: "idle",
+  message: "",
+};
 
 export default function InterestSignup() {
   const [state, formAction, isPending] = useActionState(
