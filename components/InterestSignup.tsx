@@ -13,16 +13,20 @@ export default function InterestSignup() {
   );
 
   return (
-    <section className="interest-section" id="updates" aria-labelledby="interest-title">
-      <div className="interest-copy">
-        <span>Email</span>
-        <h2 id="interest-title">Updates and startup introductions.</h2>
-        <p>Select what you want to receive.</p>
+    <section className="hero-signup" id="updates" aria-labelledby="interest-title">
+      <div className="signup-heading">
+        <span className="signup-kicker"><i /> Join the network</span>
+        <h2 id="interest-title">Updates &amp; startup intros.</h2>
+        <p>One email. You choose what reaches your inbox.</p>
       </div>
 
-      <form className="interest-form" action={formAction}>
-        <label htmlFor="interest-email">Email address</label>
-        <div className="interest-email-row">
+      <form className="signup-form" action={formAction}>
+        <label className="sr-only" htmlFor="interest-email">Email address</label>
+        <div className="signup-control">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M4 6.75h16v10.5H4z" />
+            <path d="m5 8 7 5 7-5" />
+          </svg>
           <input
             id="interest-email"
             name="email"
@@ -30,34 +34,35 @@ export default function InterestSignup() {
             inputMode="email"
             autoComplete="email"
             maxLength={254}
-            placeholder="you@example.com"
+            placeholder="you@company.com"
             required
           />
           <button type="submit" disabled={isPending}>
-            {isPending ? "Submitting…" : "Submit"}
+            <span>{isPending ? "Joining…" : "Join"}</span>
+            <svg aria-hidden="true" viewBox="0 0 20 20">
+              <path d="M4 10h11M11 6l4 4-4 4" />
+            </svg>
           </button>
         </div>
 
-        <div className="interest-options">
-          <label>
+        <div className="signup-options" aria-label="Choose what you want to receive">
+          <label className="signup-choice">
             <input name="wantsUpdates" type="checkbox" defaultChecked />
-            <span>Spilni updates</span>
+            <span><i aria-hidden="true">✓</i> Updates</span>
           </label>
-          <label>
+          <label className="signup-choice">
             <input name="wantsStartupMatch" type="checkbox" />
-            <span>Startup introductions</span>
+            <span><i aria-hidden="true">✓</i> Startup intros</span>
           </label>
         </div>
 
-        <div className="interest-honeypot" aria-hidden="true">
+        <div className="signup-honeypot" aria-hidden="true">
           <label htmlFor="interest-website">Website</label>
           <input id="interest-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
         </div>
 
-        <p className="interest-privacy">
-          Email is used only for the selected options. Unsubscribe at any time.
-        </p>
-        <p className={`interest-message ${state.status}`} role="status" aria-live="polite">
+        <p className="signup-privacy">No spam. Unsubscribe anytime.</p>
+        <p className={`signup-message ${state.status}`} role="status" aria-live="polite">
           {state.message}
         </p>
       </form>

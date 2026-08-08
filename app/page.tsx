@@ -105,15 +105,16 @@ export default function Home() {
               <Link href="/methodology">Methodology →</Link>
             </p>
           </div>
-          <div className="hero-art" aria-hidden="true">
-            <PaperPlane />
+          <div className="hero-side">
+            <div className="hero-art" aria-hidden="true">
+              <PaperPlane />
+            </div>
+            <InterestSignup />
           </div>
         </div>
       </section>
 
       <StartupDirectory />
-
-      <InterestSignup />
 
       <section className="submit-banner">
         <div>
