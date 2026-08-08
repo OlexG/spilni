@@ -15,7 +15,7 @@ export async function submitInterest(
 
   // Quietly accept bot-filled submissions without writing them to the database.
   if (typeof honeypot === "string" && honeypot.length > 0) {
-    return { status: "success", message: "You’re in — we’ll be in touch." };
+    return { status: "success", message: "You’re in. We’ll be in touch." };
   }
 
   const rawEmail = formData.get("email");
@@ -59,7 +59,7 @@ export async function submitInterest(
     // A duplicate receives the same response so this action cannot be used
     // to discover whether a particular email is already on the list.
     if (response.ok || response.status === 409) {
-      return { status: "success", message: "You’re in — we’ll be in touch." };
+      return { status: "success", message: "You’re in. We’ll be in touch." };
     }
 
     console.error("Supabase interest signup failed with status", response.status);

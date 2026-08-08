@@ -110,7 +110,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
  * The plane drifts, bobs and sways on three separate layers with coprime
  * periods, so the combined path only repeats every few minutes. Every
  * keyframe track samples a sine and runs `linear`, which keeps velocity
- * continuous across the loop seam — an eased two-stop loop reverses
+ * continuous across the loop seam; an eased two-stop loop reverses
  * direction abruptly at both ends, which is what read as jerky.
  */
 .hero-art .plane-drift,

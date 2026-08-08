@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Spilni — Startups with Ukrainian Founders",
+    name: "Spilni: Startups with Ukrainian Founders",
     short_name: "Spilni",
     description: "Startups with Ukrainian founders, with funding, hiring, founders, and sources.",
     start_url: "/",

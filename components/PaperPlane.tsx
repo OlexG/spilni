@@ -4,7 +4,7 @@ const BLUE_LIGHT = "#2b7ede";
 const YELLOW = "#ffd700";
 
 // A four-point star centred on the origin at radius 26.6, so callers can drop
-// one anywhere by scaling r/26.6 — the stroke thins with it, which is what
+// one anywhere by scaling r/26.6; the stroke thins with it, which is what
 // makes the small ones read as further away rather than as shrunken copies.
 const SPARKLE =
   "M0-26.6c2.4 17.2 9.4 24.2 26.6 26.6-17.2 2.4-24.2 9.4-26.6 26.6-2.4-17.2-9.4-24.2-26.6-26.6 17.2-2.4 24.2-9.4 26.6-26.6Z";
@@ -44,7 +44,7 @@ function Sparkle({ x, y, r, delay }: { x: number; y: number; r: number; delay: s
 export default function PaperPlane() {
   return (
     // Three nested layers so drift, bob and sway can run on coprime
-    // periods — the combined path only repeats after several minutes.
+    // periods, so the combined path only repeats after several minutes.
     <span className="plane-drift">
       <span className="plane-bob">
         <svg className="plane-sway" viewBox="0 0 256 210" role="presentation" focusable="false">
