@@ -6,7 +6,7 @@ import { DIRECTORY_REVIEWED_AT, startups } from "@/lib/startups";
 
 export const metadata: Metadata = {
   title: "Open Startup Directory Data",
-  description: "Machine-readable data for Spilni’s sourced directory of hot startups with Ukrainian founders.",
+  description: "Machine-readable data for Spilni’s sourced directory of startups with Ukrainian founders.",
   alternates: { canonical: "/data", types: { "application/json": "/data/startups.json" } },
   openGraph: { url: "/data", title: "Open Startup Directory Data | Spilni", type: "website" },
 };
@@ -16,8 +16,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Dataset",
   "@id": "https://spilni.com/data#dataset",
-  name: "Hot Startups with Ukrainian Founders",
-  description: "A curated dataset of hot startups, their Ukrainian founders, funding stages, hiring signals, locations, and supporting sources.",
+  name: "Startups with Ukrainian Founders",
+  description: "A curated dataset of startups, their Ukrainian founders, funding stages, hiring signals, locations, and supporting sources.",
   url: "https://spilni.com/data",
   dateModified: DIRECTORY_REVIEWED_AT,
   creator: { "@id": "https://spilni.com/#organization" },

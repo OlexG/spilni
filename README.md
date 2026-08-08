@@ -1,6 +1,6 @@
 # Spilni
 
-A source-backed directory of hot startups with Ukrainian founders. Live at [spilni.com](https://spilni.com/).
+A source-backed directory of startups with Ukrainian founders. Live at [spilni.com](https://spilni.com/).
 
 ## Design rationale
 

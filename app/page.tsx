@@ -7,8 +7,8 @@ import StartupDirectory from "@/components/StartupDirectory";
 import { DIRECTORY_REVIEWED_AT, startups } from "@/lib/startups";
 
 export const metadata: Metadata = {
-  title: "Hot Startups with Ukrainian Founders",
-  description: "Discover hot startups with Ukrainian founders, including founder LinkedIn profiles, recent momentum, funding, and verified sources.",
+  title: "Startups with Ukrainian Founders",
+  description: "Discover startups with Ukrainian founders, including founder LinkedIn profiles, recent momentum, funding, and verified sources.",
   alternates: {
     canonical: "/",
     types: {
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Hot Startups with Ukrainian Founders | Spilni",
-    description: "A sourced directory of hot startups with Ukrainian founders.",
+    title: "Startups with Ukrainian Founders | Spilni",
+    description: "A sourced directory of startups with Ukrainian founders.",
     url: "https://spilni.com/",
     type: "website",
   },
@@ -41,7 +41,7 @@ const homeJsonLd = {
       url: "https://spilni.com/",
       name: "Spilni",
       alternateName: ["Спільні", "spilni.com"],
-      description: "A sourced directory of hot startups with Ukrainian founders.",
+      description: "A sourced directory of startups with Ukrainian founders.",
       inLanguage: "en",
       publisher: { "@id": "https://spilni.com/#organization" },
     },
@@ -49,8 +49,8 @@ const homeJsonLd = {
       "@type": "CollectionPage",
       "@id": "https://spilni.com/#webpage",
       url: "https://spilni.com/",
-      name: "Hot Startups with Ukrainian Founders",
-      description: "A sourced directory of hot startups with Ukrainian founders.",
+      name: "Startups with Ukrainian Founders",
+      description: "A sourced directory of startups with Ukrainian founders.",
       isPartOf: { "@id": "https://spilni.com/#website" },
       publisher: { "@id": "https://spilni.com/#organization" },
       dateModified: DIRECTORY_REVIEWED_AT,
@@ -61,7 +61,7 @@ const homeJsonLd = {
     {
       "@type": "ItemList",
       "@id": "https://spilni.com/#directory",
-      name: "Hot startups with Ukrainian founders",
+      name: "Startups with Ukrainian founders",
       numberOfItems: startups.length,
       itemListOrder: "https://schema.org/ItemListOrderDescending",
       itemListElement: startups.map((startup, index) => ({
@@ -83,7 +83,7 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-inner">
           <div className="hero-copy">
-            <h1>Hot startups with <em>Ukrainian founders.</em></h1>
+            <h1>Startups with <em>Ukrainian founders.</em></h1>
             <p>
               A curated directory of standout companies with verified Ukrainian founders,
               recent momentum, founder LinkedIn profiles, and source links.

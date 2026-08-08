@@ -121,7 +121,7 @@ export default async function StartupPage({ params }: StartupPageProps) {
         </dl>
 
         <section className="profile-section">
-          <h2>Why it’s hot</h2>
+          <h2>Recent momentum</h2>
           <p>{startup.momentum}</p>
         </section>
 

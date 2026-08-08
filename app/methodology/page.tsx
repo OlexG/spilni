@@ -6,7 +6,7 @@ import { DIRECTORY_REVIEWED_AT } from "@/lib/startups";
 
 export const metadata: Metadata = {
   title: "Directory Methodology",
-  description: "How Spilni verifies hot startups, Ukrainian founders, traction, funding, and sources.",
+  description: "How Spilni verifies startups, Ukrainian founders, traction, funding, and sources.",
   alternates: { canonical: "/methodology" },
   openGraph: { url: "/methodology", title: "Directory Methodology | Spilni", type: "article" },
 };
@@ -17,7 +17,7 @@ const jsonLd = {
   "@id": "https://spilni.com/methodology#webpage",
   url: "https://spilni.com/methodology",
   name: "Spilni directory methodology",
-  description: "How Spilni verifies hot startups with Ukrainian founders.",
+  description: "How Spilni verifies startups with Ukrainian founders.",
   dateModified: DIRECTORY_REVIEWED_AT,
   isPartOf: { "@id": "https://spilni.com/#website" },
 };

@@ -4,10 +4,10 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://spilni.com"),
   title: {
-    default: "Hot Startups with Ukrainian Founders | Spilni",
+    default: "Startups with Ukrainian Founders | Spilni",
     template: "%s | Spilni",
   },
-  description: "A sourced directory of hot startups with Ukrainian founders, recent momentum, founder LinkedIn profiles, and official links.",
+  description: "A sourced directory of startups with Ukrainian founders, recent momentum, founder LinkedIn profiles, and official links.",
   applicationName: "Spilni",
   creator: "Spilni",
   publisher: "Spilni",

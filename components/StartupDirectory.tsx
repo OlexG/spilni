@@ -37,8 +37,8 @@ export default function StartupDirectory() {
   }, [query]);
 
   return (
-    <section className="directory" id="directory" aria-label="Hot startups with Ukrainian founders">
-      <h2 className="sr-only">Hot startups with Ukrainian founders</h2>
+    <section className="directory" id="directory" aria-label="Startups with Ukrainian founders">
+      <h2 className="sr-only">Startups with Ukrainian founders</h2>
       <div className="toolbar" aria-label="Directory search">
         <label className="search-field">
           <span className="sr-only">Search startups</span>
