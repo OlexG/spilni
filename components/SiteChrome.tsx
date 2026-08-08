@@ -31,6 +31,8 @@ export function SiteFooter() {
     <footer>
       <Link className="brand footer-brand" href="/"><Mark /><span>spilni</span></Link>
       <div className="footer-links">
+        <Link href="/defense-startups">Defense</Link>
+        <Link href="/silicon-valley">Silicon Valley</Link>
         <Link href="/methodology">Methodology</Link>
         <Link href="/data">Open data</Link>
         <a href="https://github.com/OlexG/spilni">GitHub</a>

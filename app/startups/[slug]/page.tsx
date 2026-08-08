@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: StartupPageProps): Promise<Me
       url,
       type: "article",
       siteName: "Spilni",
-      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Spilni Ukrainian startup directory" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Spilni startup directory" }],
     },
     twitter: { card: "summary_large_image", title: `${title} | Spilni`, description, images: ["/opengraph-image"] },
   };
@@ -63,6 +63,19 @@ export default async function StartupPage({ params }: StartupPageProps) {
     startup.stage.source,
     startup.hiring.url,
   ])];
+  const relatedCollections = [
+    startup.accelerator ? { href: "/y-combinator", label: "Founders in Y Combinator" } : null,
+    startup.sectors.includes("Defense") ? { href: "/defense-startups", label: "Defense startups" } : null,
+    startup.location.includes("San Francisco") || startup.accelerator
+      ? { href: "/silicon-valley", label: "Founders in Silicon Valley" }
+      : null,
+  ].filter((collection): collection is { href: string; label: string } => Boolean(collection));
+  const reviewedOn = new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(`${startup.lastReviewed}T12:00:00Z`));
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -194,8 +207,17 @@ export default async function StartupPage({ params }: StartupPageProps) {
               </li>
             ))}
           </ol>
-          <p className="review-note">Reviewed August 7, 2026. <Link href="/methodology">Methodology</Link>.</p>
+          <p className="review-note">Reviewed {reviewedOn}. <Link href="/methodology">Methodology</Link>.</p>
         </section>
+
+        {relatedCollections.length > 0 ? (
+          <nav className="related-collections" aria-label="Related startup collections">
+            <strong>Related lists</strong>
+            {relatedCollections.map((collection) => (
+              <Link key={collection.href} href={collection.href}>{collection.label} →</Link>
+            ))}
+          </nav>
+        ) : null}
       </article>
       <SiteFooter />
     </main>

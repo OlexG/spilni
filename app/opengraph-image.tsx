@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Spilni — Ukrainian startup directory";
+export const alt = "Spilni — startups with Ukrainian founders";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -15,7 +15,7 @@ export default function OpenGraphImage() {
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
         <div style={{ display: "flex", flexDirection: "column", fontSize: 78, lineHeight: 0.98, letterSpacing: "-4px", fontWeight: 900 }}>
-          <div>Ukrainian startup</div>
+          <div>Startup directory</div>
           <div style={{ color: "#0057b8" }}>directory.</div>
         </div>
         <div style={{ width: 360, height: 12, borderRadius: 4, background: "#ffd700" }} />

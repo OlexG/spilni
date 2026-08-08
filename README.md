@@ -1,6 +1,6 @@
 # Spilni
 
-A directory of Ukrainian-founded and Ukraine-connected startups. Each record includes sources, founder LinkedIn profiles, funding stage, and hiring status.
+A directory of startups with Ukrainian founders. Each record includes sources, founder LinkedIn profiles, funding stage, and hiring status.
 
 Site: [spilni.com](https://spilni.com/)
 
@@ -19,6 +19,9 @@ npm run build
 ## Endpoints
 
 - `/data/startups.json`
+- `/y-combinator`
+- `/defense-startups`
+- `/silicon-valley`
 - `/methodology`
 - `/llms.txt`
 - `/sitemap.xml`

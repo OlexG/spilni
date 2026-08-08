@@ -326,6 +326,22 @@ footer > div { display: flex; gap: 18px; color: var(--muted); }
 .source-list span { color: var(--muted); font-size: 11px; line-height: 1.5; }
 .review-note { margin-top: 24px !important; font-size: 12px !important; }
 .text-page { width: min(780px, calc(100% - 40px)); }
+.collection-page { width: min(920px, calc(100% - 40px)); }
+.collection-page > h1 { max-width: 880px; margin: 0; font-size: clamp(48px, 7vw, 76px); font-weight: 900; letter-spacing: -0.06em; line-height: 0.98; }
+.collection-definition { max-width: 760px; margin: 24px 0 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+.collection-page section { margin-top: 64px; }
+.collection-page section > h2 { margin: 0 0 18px; font-size: 29px; font-weight: 900; letter-spacing: -0.035em; }
+.collection-page section > p { max-width: 760px; color: var(--muted); font-size: 16px; line-height: 1.7; }
+.collection-list { display: grid; gap: 1px; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: var(--line); }
+.collection-list > article { display: grid; grid-template-columns: 56px 1fr; gap: 18px; padding: 22px; background: white; }
+.collection-list img { width: 56px; height: 56px; padding: 6px; border: 1px solid var(--line); border-radius: 13px; background: white; object-fit: contain; }
+.collection-list h3 { margin: 0 0 7px; font-size: 20px; letter-spacing: -0.025em; }
+.collection-list h3 a:hover { color: var(--blue); }
+.collection-list p { margin: 0 0 10px; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.collection-list span { color: #747b83; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; }
+.related-collections { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); }
+.related-collections strong { margin-right: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+.related-collections a { padding: 8px 11px; border: 1px solid var(--line); border-radius: 999px; color: var(--blue); font-size: 12px; font-weight: 800; }
 .data-download { display: inline-flex; align-items: center; gap: 14px; margin-top: 34px; padding: 15px 20px; border-radius: 999px; background: var(--blue); color: white; font-size: 13px; font-weight: 900; box-shadow: 0 6px 18px rgba(0, 87, 184, 0.22); }
 
 @media (max-width: 1000px) {
@@ -359,6 +375,9 @@ footer > div { display: flex; gap: 18px; color: var(--muted); }
   .profile-hero { grid-template-columns: 1fr; }
   .profile-logo { width: 92px; height: 92px; border-radius: 19px; }
   .profile-hero h1, .text-page h1 { font-size: 47px; }
+  .collection-page > h1 { font-size: 47px; }
+  .collection-list > article { grid-template-columns: 46px 1fr; padding: 18px; }
+  .collection-list img { width: 46px; height: 46px; }
   .profile-facts { grid-template-columns: repeat(2, 1fr); }
   .signal-sections { grid-template-columns: 1fr; }
   .founder-profiles { grid-template-columns: 1fr; }
