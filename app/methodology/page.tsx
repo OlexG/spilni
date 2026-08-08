@@ -52,7 +52,7 @@ export default function MethodologyPage() {
         </section>
         <section>
           <h2>Review date</h2>
-          <p>The directory was reviewed on August 7, 2026. To suggest a company or report an error, <a href="https://github.com/OlexG/spilni/issues/new?title=Directory%20correction">open a GitHub issue</a>.</p>
+          <p>The directory was reviewed on August 8, 2026. To suggest a company or report an error, <a href="https://github.com/OlexG/spilni/issues/new?title=Directory%20correction">open a GitHub issue</a>.</p>
         </section>
         <p className="review-note"><Link href="/data">Data</Link> · <Link href="/#directory">Directory</Link></p>
       </article>

@@ -52,7 +52,7 @@ export default function DataPage() {
         </section>
         <section>
           <h2>Reviewed</h2>
-          <p>August 7, 2026. <Link href="/methodology">Methodology</Link>.</p>
+          <p>August 8, 2026. <Link href="/methodology">Methodology</Link>.</p>
         </section>
       </article>
       <SiteFooter />

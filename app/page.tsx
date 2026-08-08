@@ -102,7 +102,7 @@ export default function Home() {
               <a className="primary-button" href="#directory">View directory</a>
             </div>
             <p className="directory-status">
-              {startups.length} companies · Defense, AI, fintech, media, and deep tech · Reviewed August 7, 2026 ·{" "}
+              {startups.length} companies · Defense, AI, fintech, media, and deep tech · Reviewed August 8, 2026 ·{" "}
               <Link href="/methodology">Methodology →</Link>
             </p>
           </div>
