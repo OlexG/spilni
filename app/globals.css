@@ -209,14 +209,19 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .directory { padding: 84px clamp(24px, 6vw, 96px) 110px; }
 .submit-banner h2 { margin: 0; font-size: clamp(38px, 5vw, 68px); font-weight: 900; letter-spacing: -0.06em; line-height: 0.95; }
 
-.toolbar { display: flex; align-items: center; max-width: 1280px; margin: 0 auto; padding: 13px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); box-shadow: var(--shadow-sm); transition: border-color 160ms var(--ease), box-shadow 160ms var(--ease); }
+.toolbar { display: grid; max-width: 1280px; grid-template-columns: minmax(280px, 1.45fr) repeat(3, minmax(145px, 0.7fr)); align-items: stretch; gap: 10px; margin: 0 auto; padding: 10px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); box-shadow: var(--shadow-sm); transition: border-color 160ms var(--ease), box-shadow 160ms var(--ease); }
 .toolbar:focus-within { border-color: rgba(0, 87, 184, 0.5); box-shadow: var(--shadow-sm), 0 0 0 4px rgba(0, 87, 184, 0.1); }
-.toolbar:focus-within :focus-visible { outline: none; }
-.search-field { display: flex; min-width: 280px; flex: 1; align-items: center; gap: 10px; padding: 0 10px; }
+.search-field { display: flex; min-width: 280px; min-height: 54px; align-items: center; gap: 10px; padding: 0 12px; border: 1px solid transparent; border-radius: 12px; }
+.search-field:focus-within { border-color: rgba(0, 87, 184, 0.45); box-shadow: 0 0 0 3px rgba(0, 87, 184, 0.1); }
 .search-field svg { width: 19px; fill: none; stroke: var(--muted); stroke-width: 1.8; transition: stroke 160ms var(--ease); }
 .toolbar:focus-within .search-field svg { stroke: var(--blue); }
 .search-field input { width: 100%; border: 0; outline: 0; background: transparent; color: var(--ink); font-size: 14px; font-weight: 700; }
 .search-field input::placeholder { color: #7a8188; }
+.filter-field { display: flex; min-width: 0; flex-direction: column; justify-content: center; gap: 3px; padding: 7px 10px; border: 1px solid var(--line); border-radius: 12px; background: white; }
+.filter-field:focus-within { border-color: rgba(0, 87, 184, 0.5); box-shadow: 0 0 0 3px rgba(0, 87, 184, 0.1); }
+.filter-field span { color: #777f87; font-size: 9px; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; }
+.filter-field select { width: 100%; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--ink); cursor: pointer; font: inherit; font-size: 12px; font-weight: 800; }
+.filter-field select:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
 .results-meta { display: flex; max-width: 1280px; align-items: center; gap: 5px; margin: 22px auto 15px; color: var(--muted); font-size: 12px; font-weight: 700; }
 .results-meta strong { color: var(--ink); }
 .results-meta button { margin-left: auto; border: 0; background: transparent; color: var(--blue); cursor: pointer; font-size: 12px; font-weight: 900; text-decoration: underline; }
@@ -354,8 +359,8 @@ footer > div { display: flex; gap: 18px; color: var(--muted); }
   .hero-copy { max-width: 860px; }
   .hero-side { display: none; }
   .startup-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .toolbar { align-items: stretch; flex-direction: column; }
-  .search-field { min-height: 44px; }
+  .toolbar { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .search-field { min-height: 50px; grid-column: 1 / -1; }
   footer { grid-template-columns: 1fr; }
 }
 
@@ -369,6 +374,7 @@ footer > div { display: flex; gap: 18px; color: var(--muted); }
   .hero-copy > p { font-size: 16px; }
   .signup-control { grid-template-columns: minmax(0, 1fr) auto; }
   .directory { padding: 80px 18px 90px; }
+  .toolbar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .search-field { min-width: 0; }
   .startup-grid { grid-template-columns: 1fr; }
   .startup-card { min-height: 365px; }
@@ -385,6 +391,11 @@ footer > div { display: flex; gap: 18px; color: var(--muted); }
   .profile-facts { grid-template-columns: repeat(2, 1fr); }
   .signal-sections { grid-template-columns: 1fr; }
   .founder-profiles { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 430px) {
+  .toolbar { grid-template-columns: 1fr; }
+  .search-field { grid-column: auto; }
 }
 
 @media (prefers-reduced-motion: reduce) {

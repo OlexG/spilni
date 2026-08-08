@@ -34,6 +34,25 @@ export type StartupHiring = {
   url: string;
 };
 
+export type StartupCategory =
+  | "Business software"
+  | "Consumer"
+  | "Defense"
+  | "Developer tools"
+  | "Deep tech"
+  | "Fintech";
+
+export type StartupStageGroup =
+  | "Pre-seed / seed"
+  | "Series A / B"
+  | "Growth / public"
+  | "Other / undisclosed";
+
+export type StartupClassification = {
+  category: StartupCategory;
+  stageGroup: StartupStageGroup;
+};
+
 export type Startup = {
   slug: string;
   name: string;
@@ -45,6 +64,7 @@ export type Startup = {
   ukrainePresence?: string;
   focus: string;
   sectors: string[];
+  classification: StartupClassification;
   tags: string[];
   stage: StartupStage;
   hiring: StartupHiring;
@@ -71,6 +91,7 @@ export const startups: Startup[] = [
     ukrainePresence: "Engineering and company roots in Kyiv",
     focus: "Edtech · Language learning",
     sectors: ["Education", "Marketplace", "Artificial intelligence"],
+    classification: { category: "Consumer", stageGroup: "Growth / public" },
     tags: ["Unicorn", "$150M Series D", "Global"],
     stage: { label: "Series D", detail: "$150M Series D at a $1.2B valuation, announced in January 2026.", source: "https://www.prnewswire.com/news-releases/preply-raises-150-million-to-shape-the-future-of-education-through-human-led-ai-enhanced-learning-302665890.html" },
     hiring: { status: "Hiring", detail: "Current roles across Kyiv, Barcelona, London, and New York.", url: "https://www.linkedin.com/company/preply/jobs" },
@@ -101,6 +122,7 @@ export const startups: Startup[] = [
     ukrainePresence: "Battlefield-proven Ukrainian systems and engineering",
     focus: "Defense · Autonomous systems",
     sectors: ["Defense", "Autonomy", "Drones", "Robotics"],
+    classification: { category: "Defense", stageGroup: "Pre-seed / seed" },
     tags: ["Defense", "$1B+ valuation", "UK–Ukraine"],
     stage: { label: "Seed", detail: "$50M seed round co-led by Lakestar and Shield Capital at a valuation above $1B, announced in March 2026.", source: "https://shieldcap.com/newsroom/investing-in-uforce" },
     hiring: { status: "No public openings", detail: "No roles were posted on the company’s public LinkedIn jobs page when checked.", url: "https://www.linkedin.com/company/uforce-global/jobs" },
@@ -129,7 +151,8 @@ export const startups: Startup[] = [
     status: "Active",
     location: "San Francisco",
     focus: "AI · Business communications",
-    sectors: ["Artificial intelligence", "SaaS", "Telecommunications"],
+    sectors: ["Artificial intelligence", "SaaS", "Business communications"],
+    classification: { category: "Business software", stageGroup: "Growth / public" },
     tags: ["YC S18", "$105M financing", "AI"],
     stage: { label: "Growth financing", detail: "$96M go-to-market financing from General Catalyst’s Customer Value Fund plus $9M in equity, announced in September 2025.", source: "https://www.prnewswire.com/news-releases/openphone-becomes-quo-new-name-updated-products-and-105-million-in-growth-financing-mark-major-inflection-point-for-ai-driven-front-office-solution-302562915.html" },
     hiring: { status: "Hiring", detail: "The official careers page is accepting applications for open roles.", url: "https://www.quo.com/careers" },
@@ -160,6 +183,7 @@ export const startups: Startup[] = [
     ukrainePresence: "Software deployed with nearly 50 Ukrainian units",
     focus: "Defense · Drone swarms",
     sectors: ["Defense", "Autonomy", "Artificial intelligence", "Drones"],
+    classification: { category: "Defense", stageGroup: "Growth / public" },
     tags: ["Defense", "Nasdaq: SWMR", "US-backed"],
     stage: { label: "Public · Nasdaq: SWMR", detail: "$17.3M gross IPO completed in March 2026, after a $3.5M Series A-1 financing in January 2026.", source: "https://www.sec.gov/Archives/edgar/data/2092574/000119312526222174/swmr-20260331.htm" },
     hiring: { status: "Hiring", detail: "The official careers board lists current roles in Kyiv, Warsaw, Tallinn, and other locations.", url: "https://jobs.ashbyhq.com/swarmer/" },
@@ -190,6 +214,7 @@ export const startups: Startup[] = [
     ukrainePresence: "Founded and headquartered in Kyiv",
     focus: "Media · AI entertainment",
     sectors: ["Media", "Artificial intelligence", "Consumer", "Entertainment"],
+    classification: { category: "Consumer", stageGroup: "Series A / B" },
     tags: ["$22M Series A", "Fox partner", "100M+ users"],
     stage: { label: "Series A", detail: "$22M Series A led by Horizon Capital, announced in January 2026.", source: "https://www.holywater.tech/blog/holywater-raises-record-22-million-to-turn-microdramas-into-mainstream-entertainment-in-the-u-s" },
     hiring: { status: "Hiring", detail: "The official site lists current roles across production, engineering, and creative marketing.", url: "https://www.holywater.tech/" },
@@ -220,6 +245,7 @@ export const startups: Startup[] = [
     ukrainePresence: "Used by more than 100 Ukrainian defense units",
     focus: "Defense · Geospatial intelligence",
     sectors: ["Defense", "Geospatial", "Drones", "Artificial intelligence"],
+    classification: { category: "Defense", stageGroup: "Pre-seed / seed" },
     tags: ["Defense", "€7.2M seed", "Estonia–Ukraine"],
     stage: { label: "Seed", detail: "€7.2M seed round led by Axon and SmartCap, with European defense investors participating, announced in February 2026.", source: "https://smartcap.ee/smartcapi-kaitsefond-investeerib-kaitsetehnoloogia-ettevottesse-farsight-vision/" },
     hiring: { status: "Hiring", detail: "The company maintains an active public vacancies portal.", url: "https://farsightvision.hurma.work/public-vacancies?lang=en" },
@@ -248,6 +274,7 @@ export const startups: Startup[] = [
     location: "London",
     focus: "Fintech · Car finance",
     sectors: ["Fintech", "Consumer finance", "Automotive"],
+    classification: { category: "Fintech", stageGroup: "Series A / B" },
     tags: ["£300M facility", "UK fintech", "Fast growth"],
     stage: { label: "Series A (extended)", detail: "£15.5M equity extension announced in January 2024, following an £8.5M Series A in February 2023; later financing includes a £300M private ABS facility.", source: "https://www.carmoola.co.uk/blog/carmoola-series-a" },
     hiring: { status: "No public openings", detail: "The official job board listed no openings when checked; Carmoola accepts unsolicited CVs.", url: "https://apply.workable.com/carmoola-1/" },
@@ -277,7 +304,8 @@ export const startups: Startup[] = [
     status: "Active",
     location: "Sydney · Los Angeles",
     focus: "AI · Critical minerals",
-    sectors: ["Artificial intelligence", "Mining", "Climate", "Industrial technology"],
+    sectors: ["Artificial intelligence", "Mining", "Critical minerals", "Industrial technology"],
+    classification: { category: "Deep tech", stageGroup: "Series A / B" },
     tags: ["YC S19", "$20M Series B", "Critical minerals"],
     stage: { label: "Series B", detail: "$20M Series B led by Tamarack Global and Cantos Ventures, announced in January 2025.", source: "https://www.prnewswire.com/news-releases/earth-ai-closes-oversubscribed-round-raising-20m-for-ai-driven-mineral-exploration-302360289.html" },
     hiring: { status: "Hiring", detail: "Six current roles span geology, AI engineering, geochemistry, drilling, warehouse operations, and finance in Sydney.", url: "https://au.seek.com/Earth-AI-jobs/in-All-Sydney-NSW" },
@@ -306,6 +334,7 @@ export const startups: Startup[] = [
     location: "San Francisco",
     focus: "Security · Developer infrastructure",
     sectors: ["Cybersecurity", "Developer tools", "Open source", "Enterprise software"],
+    classification: { category: "Developer tools", stageGroup: "Series A / B" },
     tags: ["YC W23", "$16M Series A", "Open source"],
     stage: { label: "Series A", detail: "$16M Series A led by Elad Gil, announced in June 2025.", source: "https://www.prnewswire.com/news-releases/infisical-secures-16m-series-a-to-redefine-enterprise-secrets-identity-and-access-management-302475063.html" },
     hiring: { status: "Hiring", detail: "Eight open roles across sales, marketing, developer experience, and engineering.", url: "https://infisical.com/careers" },
@@ -337,6 +366,7 @@ export const startups: Startup[] = [
     ukrainePresence: "Used by 50+ Ukrainian security and defense units and integrated by 20+ drone manufacturers",
     focus: "Defense · Autonomous targeting",
     sectors: ["Defense", "Autonomy", "Computer vision", "Drones"],
+    classification: { category: "Defense", stageGroup: "Other / undisclosed" },
     tags: ["Defense", "NATO-codified", "Axon-backed"],
     stage: { label: "Strategic round", detail: "Undisclosed strategic investment backed by Axon, announced in February 2026; an earlier first round was announced in July 2025 without an amount.", source: "https://www.linkedin.com/posts/yaroslavazhnyuk_great-news-the-fourth-law-has-secured-an-activity-7429098101505748992-MiIU" },
     hiring: { status: "Hiring", detail: "39 current roles across engineering, product, operations, finance, sales, and recruiting.", url: "https://jobs.dou.ua/companies/thefourthlaw-ai/vacancies/" },
@@ -365,6 +395,7 @@ export const startups: Startup[] = [
     ukrainePresence: "Systems used by more than 60 Ukrainian units",
     focus: "Defense · Robotic systems",
     sectors: ["Defense", "Robotics", "Drones", "Manufacturing"],
+    classification: { category: "Defense", stageGroup: "Pre-seed / seed" },
     tags: ["Defense", "NATO-codified", "German production"],
     stage: { label: "Seed", detail: "$800K seed round closed by July 2025, followed by Quantum Systems acquiring a 10% stake with an option to increase it to 25%; investment amount undisclosed.", source: "https://quantum-systems.com/us/news/quantum-systems-and-frontline-strategic-investment/" },
     hiring: { status: "Hiring", detail: "The official company career page lists current roles.", url: "https://www.frontline-robotics.tech/career" },
@@ -395,6 +426,7 @@ export const startups: Startup[] = [
     ukrainePresence: "Team and office presence in Lviv",
     focus: "Quantum computing · Infrastructure",
     sectors: ["Quantum computing", "Developer tools", "Deep tech"],
+    classification: { category: "Deep tech", stageGroup: "Pre-seed / seed" },
     tags: ["$11M seed", "Deep tech", "US–Ukraine"],
     stage: { label: "Seed", detail: "$11M seed round led by Primary Venture Partners, announced in January 2026.", source: "https://0e190a550a8c4c8c4b93-fcd009c875a5577fd4fe2f5b7e3bf4eb.ssl.cf2.rackcdn.com/EINPresswire-882655745-haiqu-raises-11-million-in-seed-round-to-enable-near-term-quantum-use-cases-with-new-operating-system-1.pdf" },
     hiring: { status: "Hiring", detail: "The official job board lists current global roles, including product marketing.", url: "https://apply.workable.com/haiqu-inc/" },
@@ -423,6 +455,7 @@ export const startups: Startup[] = [
     location: "Austin, Texas",
     focus: "Defense · Counter-UAS",
     sectors: ["Defense", "Counter-UAS", "Robotics", "Artificial intelligence"],
+    classification: { category: "Defense", stageGroup: "Other / undisclosed" },
     tags: ["YC Spring 2026", "Defense", "$1.6M sales"],
     stage: { label: "Venture · amount undisclosed", detail: "Raised venture funding from Streamlined Ventures in June 2026; public amount undisclosed.", source: "https://castleplacement.com/top-10-aerospace-capital-raises-and-investors-in-the-u-s-june-1st-30th-2026/" },
     hiring: { status: "Hiring", detail: "Current Austin roles span perception, robotics, hardware, and embedded systems.", url: "https://9mothers.com/careers" },
@@ -452,7 +485,8 @@ export const startups: Startup[] = [
     status: "Active",
     location: "San Francisco",
     focus: "AI · Technical support",
-    sectors: ["Artificial intelligence", "Customer support", "Industrial technology"],
+    sectors: ["Artificial intelligence", "Customer support", "B2B software"],
+    classification: { category: "Business software", stageGroup: "Pre-seed / seed" },
     tags: ["YC Fall 2025", "AI", "Bloomberg Beta"],
     stage: { label: "Early-stage · amount undisclosed", detail: "Raised an undisclosed early-stage round in early 2026.", source: "https://en.ain.ua/2026/05/26/ai-startup-with-ukrainian-roots-prox-got-funding-from-y-combinator/" },
     hiring: { status: "Hiring", detail: "Current roles include engineering, go-to-market, operations, and creative production.", url: "https://www.ycombinator.com/companies/prox/jobs" },
@@ -483,6 +517,7 @@ export const startups: Startup[] = [
     ukrainePresence: "Team presence in Lviv, Ukraine",
     focus: "AI · Sales",
     sectors: ["Artificial intelligence", "Sales technology", "B2B software"],
+    classification: { category: "Business software", stageGroup: "Pre-seed / seed" },
     tags: ["YC S23", "AI sales", "Lviv team"],
     stage: { label: "Seed", detail: "$3M seed round announced in September 2023; no later publicly disclosed amount is confirmed.", source: "https://jobs.dou.ua/companies/aisdr-inc/" },
     hiring: { status: "No public openings", detail: "The latest public vacancy found was inactive when checked.", url: "https://jobs.dou.ua/companies/aisdr-inc/" },
@@ -513,6 +548,7 @@ export const startups: Startup[] = [
     location: "San Francisco",
     focus: "AI · Developer tools",
     sectors: ["Artificial intelligence", "Developer tools", "Collaboration software"],
+    classification: { category: "Developer tools", stageGroup: "Other / undisclosed" },
     tags: ["YC Winter 2026", "AI", "Developer tools"],
     stage: { label: "Stage undisclosed", detail: "$3.5M total raised; round date and formal stage were not separately disclosed.", source: "https://www.ycombinator.com/companies/sparkles/jobs" },
     hiring: { status: "Hiring", detail: "Hiring a founding product engineer in San Francisco.", url: "https://www.ycombinator.com/companies/sparkles/jobs" },
@@ -552,6 +588,7 @@ export const startups: Startup[] = [
     ukrainePresence: "Founded in Kyiv with offices in Kyiv and Lviv",
     focus: "Edtech · Lifelong learning",
     sectors: ["Education", "Artificial intelligence", "Consumer software"],
+    classification: { category: "Consumer", stageGroup: "Other / undisclosed" },
     tags: ["Strategic round", "150M+ users", "Global"],
     stage: { label: "Strategic round", detail: "First external institutional round, led by Bullhound Capital and announced in September 2025; amount undisclosed.", source: "https://bullhoundcapital.com/press/bullhound-capital-invests-in-learning-platform-headway-inc/" },
     hiring: { status: "Hiring", detail: "Current roles across Kyiv, Madrid, Lviv, Limassol, and remote locations.", url: "https://careers.headway.inc/jobs" },
@@ -582,6 +619,7 @@ export const startups: Startup[] = [
     ukrainePresence: "Founded and operated in Ukraine",
     focus: "Fintech · Digital banking",
     sectors: ["Fintech", "Banking software", "E-commerce"],
+    classification: { category: "Fintech", stageGroup: "Growth / public" },
     tags: ["$1B valuation", "10M users", "US-backed"],
     stage: { label: "Growth equity", detail: "UMAEF and private U.S. investors completed an undisclosed investment at a $1B valuation in October 2025.", source: "https://umaef.org/wp-content/uploads/2025/10/umaef_press-release_fintech_en_vf.pdf" },
     hiring: { status: "Hiring", detail: "Current roles in software engineering, data, AI, and B2B sales.", url: "https://jobs.dou.ua/companies/mono/vacancies/" },
@@ -610,6 +648,7 @@ export const startups: Startup[] = [
     location: "Berlin · Kyiv",
     focus: "AI · Product design",
     sectors: ["Artificial intelligence", "Design tools", "Developer tools"],
+    classification: { category: "Developer tools", stageGroup: "Pre-seed / seed" },
     tags: ["€850K pre-seed", "200K+ users", "Berlin–Kyiv"],
     stage: { label: "Pre-seed", detail: "€850K round from Specialist VC and Inovo VC, with angels from Canva and WhatsApp, announced in May 2025.", source: "https://scroll.media/en/2025/05/20/banani-ai-founded-by-ukrainians-raises-e850000/" },
     hiring: { status: "Hiring", detail: "The official careers page lists a founding engineer role in Berlin.", url: "https://www.banani.co/company/careers" },
@@ -641,6 +680,7 @@ export const startups: Startup[] = [
     ukrainePresence: "Founded in Ukraine with a team in Kyiv",
     focus: "AI · Advertising",
     sectors: ["Artificial intelligence", "Marketing technology", "SaaS"],
+    classification: { category: "Business software", stageGroup: "Pre-seed / seed" },
     tags: ["Seed", "1.5M+ businesses", "6× growth"],
     stage: { label: "Seed", detail: "$1M seed round raised in 2023; Deel committed a further $1M investment after Zeely won The Pitch in May 2026, with final terms pending in July.", source: "https://en.ain.ua/2026/07/24/the-higher-the-algorithms-accuracy-the-more-autonomous-the-process-the-team-of-ukrainian-startup-zeely-on-investment-and-the-new-phase-of-zeely-20/" },
     hiring: { status: "Hiring", detail: "Current roles across product, engineering, data, marketing, operations, and recruiting.", url: "https://jobs.dou.ua/companies/zeely-ai/vacancies/" },
@@ -671,6 +711,7 @@ export const startups: Startup[] = [
     ukrainePresence: "Designed and manufactured in Ukraine for Ukrainian defense units",
     focus: "Defense · Ground robotics",
     sectors: ["Defense", "Robotics", "Autonomy", "Manufacturing"],
+    classification: { category: "Defense", stageGroup: "Pre-seed / seed" },
     tags: ["Defense", "$3.74M seed", "German production"],
     stage: { label: "Seed", detail: "$3.74M seed investment from U.S.-Ukrainian MITS Capital, announced in July 2025.", source: "https://thedigital.gov.ua/news/business/amerikanski-investitsii-v-ukrainsku-oboronu-tencore-zaluchila-mayzhe-4-mln-cherez-diyacity" },
     hiring: { status: "Hiring", detail: "Current public openings include project management roles in Ukraine.", url: "https://www.linkedin.com/jobs/view/4375293940/" },
@@ -701,6 +742,7 @@ export const startups: Startup[] = [
     ukrainePresence: "Founded and operated in Lviv for Ukrainian defense units",
     focus: "Defense · Autonomous navigation",
     sectors: ["Defense", "Autonomy", "Drones", "Computer vision"],
+    classification: { category: "Defense", stageGroup: "Pre-seed / seed" },
     tags: ["Defense", "$1M seed", "Sweden–Ukraine"],
     stage: { label: "Seed", detail: "$1M round led by Sweden's Varangians, with Ukrainian and U.S. investors, announced in September 2025.", source: "https://thedefender.media/en/2025/09/norda-dynamics-raises-1-mln/" },
     hiring: { status: "Hiring", detail: "Current openings span machine learning, edge systems, integration, support, and sales.", url: "https://www.linkedin.com/posts/norda-dynamics_%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0-norda-dynamics-%D0%B4%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%D1%81%D1%8F-%D0%B4%D0%BE-talent-activity-7437799620933693441-jqhd" },
