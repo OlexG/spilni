@@ -20,7 +20,7 @@ export function SiteHeader() {
       <nav aria-label="Main navigation">
         <Link href="/#directory">Directory</Link>
         <Link href="/methodology">Methodology</Link>
-        <a className="nav-cta" href="https://github.com/OlexG/spilni/issues/new?title=Suggest%20a%20startup">Suggest a startup</a>
+        <a className="nav-cta" href="https://github.com/OlexG/spilni/issues/new?title=Suggest%20a%20startup" target="_blank" rel="noreferrer">Suggest a startup</a>
       </nav>
     </header>
   );
@@ -30,7 +30,6 @@ export function SiteFooter() {
   return (
     <footer>
       <Link className="brand footer-brand" href="/"><Mark /><span>spilni</span></Link>
-      <p>Startups. Ukrainian founders.</p>
       <div className="footer-links">
         <Link href="/methodology">Methodology</Link>
         <Link href="/data">Open data</Link>

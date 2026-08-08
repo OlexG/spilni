@@ -1,4 +1,5 @@
 export const DIRECTORY_REVIEWED_AT = "2026-08-07";
+export const SITE_UPDATED_AT = "2026-08-08";
 
 export type StartupSource = {
   label: string;
@@ -219,7 +220,7 @@ export const startups: Startup[] = [
     tags: ["Defense", "€7.2M seed", "Estonia–Ukraine"],
     stage: { label: "Seed", detail: "€7.2M seed round led by Final Frontier and joined by Axon and SmartCap.", source: "https://finalfrontier.vc/newsroom/11022026" },
     hiring: { status: "Hiring", detail: "The company maintains an active public vacancies portal.", url: "https://farsightvision.hurma.work/public-vacancies?lang=en" },
-    momentum: "€7.2M seed in February 2026 led by Axon and Estonia’s SmartCap Defence Fund after adding 1,500 accounts in 2025.",
+    momentum: "€7.2M seed in February 2026 led by Final Frontier, with participation from Axon and Estonia’s SmartCap Defence Fund, after adding 1,500 accounts in 2025.",
     description: "Geospatial intelligence software for drone teams operating in GPS-denied environments.",
     answer: "Farsight Vision is a Ukrainian-Estonian defense startup whose mapping and navigation software is used by more than 100 Ukrainian units. It raised a €7.2 million seed round in 2026.",
     website: "https://fsv.global/en",
@@ -233,7 +234,7 @@ export const startups: Startup[] = [
       { label: "Farsight Vision company story", publisher: "Farsight Vision", url: "https://fsv.global/en/about-us", supports: ["founders", "Ukraine connection", "locations", "product", "users"] },
       { label: "Farsight Vision raises €7.2M", publisher: "Final Frontier", url: "https://finalfrontier.vc/newsroom/11022026", supports: ["funding", "Western investors", "momentum"] },
     ],
-    lastReviewed: DIRECTORY_REVIEWED_AT,
+    lastReviewed: SITE_UPDATED_AT,
   },
   {
     slug: "carmoola",
@@ -305,7 +306,7 @@ export const startups: Startup[] = [
     tags: ["YC W23", "$16M Series A", "Open source"],
     stage: { label: "Series A", detail: "$16M Series A led by Elad Gil, announced in June 2025.", source: "https://www.prnewswire.com/news-releases/infisical-secures-16m-series-a-to-redefine-enterprise-secrets-identity-and-access-management-302475063.html" },
     hiring: { status: "Hiring", detail: "The official careers page lists current opportunities.", url: "https://infisical.com/careers" },
-    momentum: "$16M Series A in June 2025 after reaching cash-flow positivity and adoption across major enterprise workloads.",
+    momentum: "$16M Series A in June 2025 after reaching cash-flow positivity and enterprise adoption.",
     description: "Open-source security infrastructure for secrets, certificates, and privileged access.",
     answer: "Infisical is a San Francisco security-infrastructure company co-founded by Ukrainian entrepreneur Vlad Matsiiako. It raised a $16 million Series A in 2025 after becoming cash-flow positive.",
     website: "https://infisical.com/",
@@ -429,12 +430,14 @@ export const startups: Startup[] = [
     inclusionReason: "Co-founder Roman Khomenko has documented education and work roots in Ukraine and lists Ukrainian as a native language. The company says its counter-drone mission was motivated by the Russia–Ukraine war.",
     founders: [
       { name: "Roman Khomenko", role: "Co-founder", linkedin: "https://www.linkedin.com/in/dowakin/", connectionSummary: "Studied in Kharkiv, worked in Ukraine, and lists Ukrainian as a native language." },
+      { name: "Russell Smith", role: "Co-founder and CEO", linkedin: "https://www.linkedin.com/in/russgsmith", connectionSummary: "Austin-based co-founder leading 9 Mothers." },
+      { name: "Bogdan Pyzh", role: "Co-founder", linkedin: "https://www.linkedin.com/in/bogdan-pyzh-b5b77388", connectionSummary: "Austin-based co-founder building 9 Mothers’ counter-drone systems." },
     ],
     sources: [
       { label: "9 Mothers company profile", publisher: "Y Combinator", url: "https://www.ycombinator.com/companies/9-mothers-corporation", supports: ["company", "batch", "sales", "location", "product", "founder"] },
       { label: "Roman Khomenko profile", publisher: "LinkedIn", url: "https://www.linkedin.com/in/dowakin/", supports: ["Ukraine connection", "education", "language"] },
     ],
-    lastReviewed: DIRECTORY_REVIEWED_AT,
+    lastReviewed: SITE_UPDATED_AT,
   },
   {
     slug: "prox",
@@ -492,13 +495,14 @@ export const startups: Startup[] = [
     sources: [
       { label: "AiSDR company profile", publisher: "Y Combinator", url: "https://www.ycombinator.com/companies/aisdr", supports: ["company", "batch", "location", "product", "founders"] },
       { label: "Interview with AiSDR co-founder Yuriy Zaremba", publisher: "AIN", url: "https://en.ain.ua/2024/02/13/interview-with-yuriy-zaremba-from-aisdr/", supports: ["Ukraine connection", "Lviv presence", "company background", "funding"] },
+      { label: "AiSDR 2024 year in review", publisher: "AiSDR", url: "https://aisdr.com/blog/aisdr-2024-year-in-review/", supports: ["revenue growth", "team growth", "product momentum"] },
+      { label: "AiSDR funding and revenue profile", publisher: "CB Insights", url: "https://www.cbinsights.com/company/aisdr/financials", supports: ["2024 revenue", "2026 financing signal"] },
     ],
-    lastReviewed: DIRECTORY_REVIEWED_AT,
+    lastReviewed: SITE_UPDATED_AT,
   },
   {
     slug: "sparkles",
     name: "Sparkles",
-    alternateNames: ["Ai Daniil Bekirov"],
     logo: "/logos/sparkles.png",
     foundedYear: 2025,
     status: "Active",
@@ -517,8 +521,8 @@ export const startups: Startup[] = [
     inclusionReason: "Founder Daniil Bekirov self-identifies with Ukraine in his official Y Combinator founder biography.",
     founders: [
       {
-        name: "Daniil Bekirov",
-        alternateNames: ["Ai Daniil Bekirov"],
+        name: "Ai Daniil Bekirov",
+        alternateNames: ["Daniil Bekirov"],
         role: "Founder",
         linkedin: "https://www.linkedin.com/in/aidaniilbekirov",
         connectionSummary: "Self-identifies with Ukraine in his official Y Combinator founder biography.",
@@ -532,7 +536,7 @@ export const startups: Startup[] = [
         supports: ["company", "batch", "founded year", "location", "product", "founder", "Ukraine connection"],
       },
     ],
-    lastReviewed: DIRECTORY_REVIEWED_AT,
+    lastReviewed: SITE_UPDATED_AT,
   },
 ];
 

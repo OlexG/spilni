@@ -13,10 +13,10 @@ export default function NotFound() {
       <section className="content-shell text-page">
         <p className="profile-kicker">404</p>
         <h1>Page not found.</h1>
-        <p className="page-lede">This page may have moved, or the company is not in the directory yet.</p>
+        <p className="page-lede">The URL does not match a directory page.</p>
         <div className="page-actions">
-          <Link className="primary-button" href="/#directory">Browse the directory</Link>
-          <Link href="/methodology">Read the methodology</Link>
+          <Link className="primary-button" href="/#directory">Directory</Link>
+          <Link href="/methodology">Methodology</Link>
         </div>
       </section>
       <SiteFooter />

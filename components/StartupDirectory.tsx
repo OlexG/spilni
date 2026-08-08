@@ -94,12 +94,12 @@ export default function StartupDirectory() {
               </dl>
               <div className="card-footer">
                 <a href={startup.website} target="_blank" rel="noreferrer">
-                  Visit company <ArrowIcon />
+                  Website <ArrowIcon />
                 </a>
                 {startup.accelerator ? (
                   <a className="source-link" href={startup.accelerator.profile} target="_blank" rel="noreferrer">YC profile</a>
                 ) : (
-                  <a className="source-link" href={startup.sources[0].url} target="_blank" rel="noreferrer">Evidence</a>
+                  <a className="source-link" href={startup.sources[0].url} target="_blank" rel="noreferrer">Source</a>
                 )}
               </div>
             </article>

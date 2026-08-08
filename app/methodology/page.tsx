@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
 import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
-import { DIRECTORY_REVIEWED_AT } from "@/lib/startups";
+import { SITE_UPDATED_AT } from "@/lib/startups";
 
 export const metadata: Metadata = {
   title: "Directory Methodology",
-  description: "How Spilni verifies startups, Ukrainian founders, traction, funding, and sources.",
+  description: "Inclusion, sourcing, funding-stage, and hiring-status rules for the Spilni directory.",
   alternates: { canonical: "/methodology" },
-  openGraph: { url: "/methodology", title: "Directory Methodology | Spilni", type: "article" },
+  openGraph: { url: "/methodology", title: "Directory Methodology | Spilni", type: "article", siteName: "Spilni", images: ["/opengraph-image"] },
+  twitter: { card: "summary_large_image", images: ["/opengraph-image"] },
 };
 
 const jsonLd = {
@@ -17,9 +18,10 @@ const jsonLd = {
   "@id": "https://spilni.com/methodology#webpage",
   url: "https://spilni.com/methodology",
   name: "Spilni directory methodology",
-  description: "How Spilni verifies startups with Ukrainian founders.",
-  dateModified: DIRECTORY_REVIEWED_AT,
+  description: "Rules used to include and document companies in the Spilni directory.",
+  dateModified: SITE_UPDATED_AT,
   isPartOf: { "@id": "https://spilni.com/#website" },
+  publisher: { "@id": "https://spilni.com/#organization" },
 };
 
 export default function MethodologyPage() {
@@ -28,31 +30,31 @@ export default function MethodologyPage() {
       <JsonLd data={jsonLd} />
       <SiteHeader />
       <article className="content-shell text-page">
-        <p className="profile-kicker">Transparent by design</p>
+        <p className="profile-kicker">Criteria and sources</p>
         <h1>Directory methodology</h1>
-        <p className="page-lede">Spilni is a curated, source-backed directory. Every company page explains why it is included and links to evidence.</p>
+        <p className="page-lede">Companies are included using the rules below. Each record links to its sources.</p>
 
         <section>
-          <h2>What qualifies</h2>
-          <p>A company must have a documented Ukrainian founder or a substantial, public operational connection to Ukraine. It must also show meaningful momentum in the last 18 months through funding, revenue, customer adoption, battlefield deployment, production scale, or a strategic Western partnership. “Ukrainian-founded” means a credible source identifies at least one founder as Ukrainian. “Ukraine-connected” covers a documented connection that does not justify a nationality claim.</p>
+          <h2>Inclusion</h2>
+          <p>A company must have a documented Ukrainian founder or substantial public operations in Ukraine. It must also have public evidence from the last 18 months of funding, revenue, customer adoption, deployment, production, or a strategic partnership.</p>
         </section>
         <section>
-          <h2>How global ties are treated</h2>
-          <p>Western and global ties can include investors, customers, accelerator participation, manufacturing partnerships, allied-government programs, or headquarters and operating teams in North America or Europe. Y Combinator participation appears as an optional company tag; it is never an inclusion requirement.</p>
+          <h2>Labels</h2>
+          <p>“Ukrainian-founded” means a source identifies at least one founder as Ukrainian. “Ukraine-connected” means the company has a documented operational connection to Ukraine, but the available sources do not support a founder-nationality claim. Y Combinator participation is an optional tag.</p>
         </section>
         <section>
-          <h2>How facts are checked</h2>
-          <p>We prefer official company and investor announcements, founder profiles, accelerator records, government documents, and direct interviews. Independent reporting can establish Ukrainian roots or validate momentum when a primary source is unavailable. Each company page states which facts each citation supports.</p>
+          <h2>Sources</h2>
+          <p>Sources include company and investor announcements, founder profiles, accelerator records, government documents, interviews, and independent reporting. Each citation lists the claims it supports.</p>
         </section>
         <section>
           <h2>Funding stage and hiring</h2>
-          <p>Stage reflects the latest publicly named equity round. Debt facilities and strategic investments are labeled separately rather than forced into a Series A, B, or C category. “Hiring” requires a public careers page or recent vacancy; “No public openings” means none were visible when checked, not that the company has stopped recruiting privately.</p>
+          <p>Stage is the latest publicly named equity round. Debt and strategic investments are labeled separately. “Hiring” means a public careers page or recent vacancy was found. “No public openings” means none were visible when checked.</p>
         </section>
         <section>
-          <h2>Freshness and corrections</h2>
-          <p>The current directory was reviewed on August 7, 2026. Company status, locations, names, and roles can change. To suggest a company or correct a record, <a href="https://github.com/OlexG/spilni/issues/new?title=Directory%20correction">open a public GitHub issue</a>.</p>
+          <h2>Review date</h2>
+          <p>The directory was reviewed on August 7, 2026. To suggest a company or report an error, <a href="https://github.com/OlexG/spilni/issues/new?title=Directory%20correction">open a GitHub issue</a>.</p>
         </section>
-        <p className="review-note"><Link href="/data">Download the open directory data</Link> or <Link href="/#directory">browse the companies</Link>.</p>
+        <p className="review-note"><Link href="/data">Data</Link> · <Link href="/#directory">Directory</Link></p>
       </article>
       <SiteFooter />
     </main>

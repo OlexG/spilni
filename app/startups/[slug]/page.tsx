@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import JsonLd from "@/components/JsonLd";
 import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
-import { getStartup, startups } from "@/lib/startups";
+import { getStartup, startups, type Startup } from "@/lib/startups";
 
 type StartupPageProps = {
   params: Promise<{ slug: string }>;
@@ -12,6 +12,18 @@ type StartupPageProps = {
 
 export function generateStaticParams() {
   return startups.map(({ slug }) => ({ slug }));
+}
+
+function getMetaDescription(startup: Startup) {
+  const prefix = `${startup.name}: `;
+  const suffix = " Funding, hiring, founders, and verified sources.";
+  const available = 160 - prefix.length - suffix.length;
+  const summary = startup.description.replace(/\.$/, "");
+  const clipped = summary.length <= available
+    ? summary
+    : `${summary.slice(0, available - 1).replace(/\s+\S*$/, "")}…`;
+
+  return `${prefix}${clipped}${suffix}`;
 }
 
 export async function generateMetadata({ params }: StartupPageProps): Promise<Metadata> {
@@ -22,14 +34,22 @@ export async function generateMetadata({ params }: StartupPageProps): Promise<Me
     ? "Ukrainian-Founded Startup"
     : "Ukraine-Connected Startup";
   const title = `${startup.name}: ${connectionTitle}`;
-  const description = `${startup.description} ${startup.momentum}`;
+  const description = getMetaDescription(startup);
   const url = `/startups/${startup.slug}`;
 
   return {
     title,
     description,
     alternates: { canonical: url },
-    openGraph: { title: `${title} | Spilni`, description, url, type: "article" },
+    openGraph: {
+      title: `${title} | Spilni`,
+      description,
+      url,
+      type: "article",
+      siteName: "Spilni",
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Spilni Ukrainian startup directory" }],
+    },
+    twitter: { card: "summary_large_image", title: `${title} | Spilni`, description, images: ["/opengraph-image"] },
   };
 }
 
@@ -38,6 +58,11 @@ export default async function StartupPage({ params }: StartupPageProps) {
   if (!startup) notFound();
 
   const pageUrl = `https://spilni.com/startups/${startup.slug}`;
+  const citations = [...new Set([
+    ...startup.sources.map((source) => source.url),
+    startup.stage.source,
+    startup.hiring.url,
+  ])];
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -51,6 +76,8 @@ export default async function StartupPage({ params }: StartupPageProps) {
         lastReviewed: startup.lastReviewed,
         inLanguage: "en",
         isPartOf: { "@id": "https://spilni.com/#website" },
+        publisher: { "@id": "https://spilni.com/#organization" },
+        citation: citations,
         about: { "@id": `${pageUrl}#organization` },
         breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
       },
@@ -63,7 +90,9 @@ export default async function StartupPage({ params }: StartupPageProps) {
         logo: `https://spilni.com${startup.logo}`,
         foundingDate: String(startup.foundedYear),
         description: startup.description,
-        sameAs: [startup.website, startup.accelerator?.profile].filter(Boolean),
+        location: { "@type": "Place", name: startup.location },
+        knowsAbout: startup.sectors,
+        sameAs: [startup.accelerator?.profile].filter(Boolean),
         founder: startup.founders.map((founder) => ({ "@id": `${pageUrl}#${founder.name.toLowerCase().replaceAll(" ", "-")}` })),
         mainEntityOfPage: { "@id": `${pageUrl}#webpage` },
       },
@@ -74,7 +103,6 @@ export default async function StartupPage({ params }: StartupPageProps) {
         alternateName: founder.alternateNames,
         jobTitle: founder.role,
         sameAs: [founder.linkedin],
-        worksFor: { "@id": `${pageUrl}#organization` },
       })),
       {
         "@type": "BreadcrumbList",
@@ -129,12 +157,12 @@ export default async function StartupPage({ params }: StartupPageProps) {
           <div>
             <h2>Funding stage</h2>
             <p>{startup.stage.detail}</p>
-            <a href={startup.stage.source}>Verify stage ↗</a>
+            <a href={startup.stage.source}>Stage source ↗</a>
           </div>
           <div>
             <h2>Hiring signal</h2>
             <p>{startup.hiring.detail}</p>
-            <a href={startup.hiring.url}>View jobs signal ↗</a>
+            <a href={startup.hiring.url}>Jobs ↗</a>
           </div>
         </section>
 
@@ -158,7 +186,6 @@ export default async function StartupPage({ params }: StartupPageProps) {
 
         <section className="profile-section">
           <h2>Sources</h2>
-          <p>We use public primary sources where possible and identify exactly what each source supports.</p>
           <ol className="source-list">
             {startup.sources.map((source) => (
               <li key={source.url}>
@@ -167,7 +194,7 @@ export default async function StartupPage({ params }: StartupPageProps) {
               </li>
             ))}
           </ol>
-          <p className="review-note">Last reviewed: August 7, 2026. <Link href="/methodology">Read the methodology</Link>.</p>
+          <p className="review-note">Reviewed August 7, 2026. <Link href="/methodology">Methodology</Link>.</p>
         </section>
       </article>
       <SiteFooter />

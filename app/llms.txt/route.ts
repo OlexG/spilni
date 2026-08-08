@@ -7,7 +7,7 @@ export function GET() {
 
   const body = `# Spilni
 
-> Spilni is a curated, source-backed directory of startups with Ukrainian founders.
+> Spilni is a source-backed directory of Ukrainian-founded and Ukraine-connected startups.
 
 Companies qualify through documented Ukrainian roots or substantial operations in Ukraine plus recent evidence of funding, traction, deployment, production, or strategic Western partnerships. Y Combinator participation is shown only as an optional company tag.
 
