@@ -10,9 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "https://spilni.com/defense-startups", lastModified: siteLastModified, changeFrequency: "weekly", priority: 0.8 },
     { url: "https://spilni.com/silicon-valley", lastModified: siteLastModified, changeFrequency: "weekly", priority: 0.8 },
     { url: "https://spilni.com/y-combinator", lastModified: siteLastModified, changeFrequency: "weekly", priority: 0.8 },
-    { url: "https://spilni.com/y-combinator", lastModified: siteLastModified, changeFrequency: "weekly", priority: 0.8 },
-    { url: "https://spilni.com/defense-startups", lastModified: siteLastModified, changeFrequency: "weekly", priority: 0.8 },
-    { url: "https://spilni.com/silicon-valley", lastModified: siteLastModified, changeFrequency: "weekly", priority: 0.8 },
     ...startups.map((startup) => ({
       url: `https://spilni.com/startups/${startup.slug}`,
       lastModified: new Date(`${startup.lastReviewed}T12:00:00Z`),
