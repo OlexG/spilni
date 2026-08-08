@@ -153,7 +153,7 @@ export const startups: Startup[] = [
   {
     slug: "swarmer",
     name: "Swarmer",
-    logo: "/logos/swarmer.webp",
+    logo: "/logos/swarmer.png",
     foundedYear: 2023,
     status: "Active",
     location: "Austin · Kyiv",
@@ -213,7 +213,7 @@ export const startups: Startup[] = [
   {
     slug: "farsight-vision",
     name: "Farsight Vision",
-    logo: "/logos/farsight-vision.png",
+    logo: "/logos/farsight-vision-logo.jpg",
     foundedYear: 2023,
     status: "Active",
     location: "Lviv · Tallinn",
