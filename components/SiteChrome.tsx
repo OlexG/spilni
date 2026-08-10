@@ -30,6 +30,9 @@ export function SiteFooter() {
   return (
     <footer>
       <Link className="brand footer-brand" href="/"><Mark /><span>spilni</span></Link>
+      <p className="footer-contact">
+        Questions? <a href="mailto:oleksandr.gorpynich@gmail.com">oleksandr.gorpynich@gmail.com</a>
+      </p>
       <div className="footer-links">
         <Link href="/defense-startups">Defense</Link>
         <Link href="/silicon-valley">Silicon Valley</Link>

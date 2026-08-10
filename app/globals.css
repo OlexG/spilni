@@ -297,6 +297,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 footer { display: grid; grid-template-columns: auto 1fr auto; gap: 30px; align-items: center; padding: 42px clamp(24px, 6vw, 96px); border-top: 1px solid var(--line); font-size: 11px; font-weight: 700; }
 footer p { margin: 0; color: var(--muted); }
 footer > div { display: flex; gap: 18px; color: var(--muted); }
+.footer-contact a { color: var(--blue); text-decoration: underline; text-decoration-color: rgba(0, 87, 184, 0.25); text-underline-offset: 3px; }
+.footer-contact a:hover { text-decoration-color: currentColor; }
 .footer-links a:hover { color: var(--blue); }
 .footer-brand { font-size: 19px; }
 .footer-brand .brand-mark { width: 23px; height: 23px; border-radius: 6px; }
